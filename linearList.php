@@ -44,7 +44,7 @@ class linkedList
                 $node = &$node->next;
             }
         }
-
+        ++$this->length;
         return $this;
     }
 
@@ -52,7 +52,6 @@ class linkedList
     {
         $this->header = new node($val, null);
         $this->length += 1;
-
         return $this;
     }
 
@@ -69,9 +68,82 @@ class linkedList
         return $this;
     }
 
+    public function findByKey($key)
+    {
+
+        $i = 1;
+        $val = null;
+        $node = $this->header;
+        while (true){
+            if ($i === $key){
+                $val = $node->val;
+                break;
+            }
+            $i ++;
+            $node = $node->next;
+            if ($node == null) break;
+        }
+
+        return $val;
+    }
+
+    public function find($val)
+    {
+        $i = 1;
+        $valKey = null;
+        $node = $this->header;
+        while (true){
+            if ($node->val === $val){
+                $valKey = $i;
+                break;
+            }
+            $i++;
+            $node = $node->next;
+            if ($node == null) break;
+        }
+
+        return $valKey;
+    }
+
+    public function getLength()
+    {
+        return $this->length;
+    }
+
+    public function delete($key)
+    {
+        $node = &$this->header;
+
+        if ($key === 1){
+            $node = $node->next;
+
+            return $this;
+        }
+
+        $i = 1;
+        while (1){
+
+            if ($i === $key -1){
+                if ($node->next){
+
+                    if ($node->next->next) $next = &$node->next->next;
+                    else $next = null;
+
+                    $node->next = $next;
+                }
+                break;
+            }
+            $i ++;
+            $node = &$node->next;
+        }
+
+        return $this;
+    }
+
 }
 
 
-$aa = (new linkedList())->insert(1)->insert(2)->insert(3)->insert(4, 2);
+$aa = (new linkedList())->insert(1)->insert(2)->insert(3)->insert(4)
+->delete(3);
 
 var_dump($aa);
