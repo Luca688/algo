@@ -237,22 +237,19 @@ class bst
         $stack = [];
         $current = $tree;
 
-
-        while ($stack || $current){
-
+        while ($current || $stack){
             while ($current) {
                 array_push($stack, $current);
                 $current = $current->l;
             }
 
-            while ($stack) {
+            while (!$current){
                 $current = array_pop($stack);
-                echo $current->val;
-                if ($current->r) {
-                    array_push($stack, $current->r);
-                }
-                if ($current->r== null && $current->l === null) break;
+                if (!$current) break;
+                $res[] = $current->val;
+                $current = $current ? $current->r : null;
             }
+
         }
 
         return $res;
@@ -366,7 +363,7 @@ $aa = (new bst())->insert(6)->insert(4)->insert(8)->insert(2)->insert(5)->insert
 $tree = $aa->getTree();
 //echo json_encode($tree);
 
- var_dump($aa->postOrderIteration($tree));
+ print_r($aa->inOrderIteration($tree));
 
 
 
