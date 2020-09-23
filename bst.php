@@ -356,6 +356,18 @@ class bst
         return $res;
     }
 
+
+    public function getHeightByRecursive($root)
+    {
+        if ($root === null) return 0;
+
+        $l = $this->getHeightByRecursive($root->l);
+        $r = $this->getHeightByRecursive($root->r);
+
+        return 1+($l > $r ? $l : $r);
+
+    }
+
 }
 
 $aa = (new bst())->insert(6)->insert(4)->insert(8)->insert(2)->insert(5)->insert(7)->insert(9)->insert(1)->insert(3)->insert(10);
@@ -363,7 +375,7 @@ $aa = (new bst())->insert(6)->insert(4)->insert(8)->insert(2)->insert(5)->insert
 $tree = $aa->getTree();
 //echo json_encode($tree);
 
- print_r($aa->inOrderIteration($tree));
+ print_r($aa->getHeightByRecursive($tree));
 
 
 
