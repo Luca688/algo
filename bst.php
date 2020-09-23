@@ -230,8 +230,32 @@ class bst
     /***
      * 左中右
      */
-    public function inOrderIteration()
+    public function inOrderIteration($tree)
     {
+        $res = [];
+
+        $stack = [];
+        $current = $tree;
+
+
+        while ($stack || $current){
+
+            while ($current) {
+                array_push($stack, $current);
+                $current = $current->l;
+            }
+
+            while ($stack) {
+                $current = array_pop($stack);
+                echo $current->val;
+                if ($current->r) {
+                    array_push($stack, $current->r);
+                }
+                if ($current->r== null && $current->l === null) break;
+            }
+        }
+
+        return $res;
     }
 
     public function getTree()
@@ -253,7 +277,7 @@ class bst
 
         $height = 0;
         while (!empty($next)){
-            
+
             $tmpTemp = [];
             while (1) {
                 $current = array_pop($next);
@@ -277,16 +301,72 @@ class bst
         return $height;
     }
 
+    public function postOrderIteration($tree)
+    {
+        $current = $tree;
+        $res = [];
+        $stack = [];
+
+        while ($current){
+            array_push($stack, $current);
+            $current = $current->l;
+        }
+
+
+        while ($stack){
+            $current = array_pop($stack);
+            //叶子节点
+            if ($current->l == null && $current->r == null){
+
+                $res[] = $current->val;
+            }
+            //左右都有
+            elseif ($current->l && $current->r){
+                //左右已输出
+                if (in_array($current->r->val, $res)){
+                    $res[] = $current->val;
+                }else{
+
+                    array_push($stack, $current);
+                    array_push($stack, $current->r);
+                    if (!in_array($current->l->val, $res)){
+                        array_push($stack, $current->l);
+                    }
+                }
+            }
+            //只有左
+            elseif ($current->l){
+
+                if (in_array($current->l->val, $res)){
+                    $res[] = $current->val;
+                }else{
+                    array_push($stack, $current);
+                    array_push($stack, $current->l);
+                }
+            }
+            //只有右
+            else{
+                if (in_array($current->r->val, $res)){
+                    $res[] = $current->val;
+                }else{
+                    array_push($stack, $current);
+                    array_push($stack, $current->r);
+                }
+            }
+        }
+
+
+        return $res;
+    }
 
 }
 
 $aa = (new bst())->insert(6)->insert(4)->insert(8)->insert(2)->insert(5)->insert(7)->insert(9)->insert(1)->insert(3)->insert(10);
 
 $tree = $aa->getTree();
-echo json_encode($tree);
+//echo json_encode($tree);
 
- var_dump($aa->findRecursive($tree, 10));
- var_dump($aa->getHeightByLevel($tree));
+ var_dump($aa->postOrderIteration($tree));
 
 
 
