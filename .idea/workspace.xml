@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79a3e310-c85b-4b46-9a4d-de078ff8537c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="79a3e310-c85b-4b46-9a4d-de078ff8537c" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,12 +11,12 @@
   <component name="FileEditorManager">
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+        <leaf>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/structure/link_list.go">
+            <entry file="file://$PROJECT_DIR$/structure/stack.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="427">
-                  <caret line="143" column="33" selection-start-line="143" selection-start-column="18" selection-end-line="143" selection-end-column="33" />
+                <state relative-caret-position="522">
+                  <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
                 </state>
               </provider>
             </entry>
@@ -28,10 +26,10 @@
       <split-second>
         <leaf>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/structure/link_list_test.go">
+            <entry file="file://$PROJECT_DIR$/structure/stack_test.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="715">
-                  <caret line="146" column="38" selection-start-line="146" selection-start-column="38" selection-end-line="146" selection-end-column="38" />
+                <state relative-caret-position="486">
+                  <caret line="27" column="11" lean-forward="true" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
                   <folding>
                     <element signature="e#19#79#0" expanded="true" />
                   </folding>
@@ -57,6 +55,8 @@
         <option value="$PROJECT_DIR$/main.go" />
         <option value="$PROJECT_DIR$/structure/link_list.go" />
         <option value="$PROJECT_DIR$/structure/link_list_test.go" />
+        <option value="$PROJECT_DIR$/structure/stack.go" />
+        <option value="$PROJECT_DIR$/structure/stack_test.go" />
       </list>
     </option>
   </component>
@@ -84,28 +84,6 @@
               <item name="algo" type="b2602c69:ProjectViewProjectNode" />
               <item name="algo" type="462c0819:PsiDirectoryNode" />
               <item name="structure" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="algo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="algo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Go Modules &lt;algo&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
-            </path>
-            <path>
-              <item name="algo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Go Modules &lt;algo&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
-              <item name="testify@v1.7.0" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="algo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Go Modules &lt;algo&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
-              <item name="testify@v1.7.0" type="462c0819:PsiDirectoryNode" />
-              <item name="assert" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -142,29 +120,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Test.TestFindNodeByIndex in algo/structure">
-    <configuration name="TestDeleteByIndex in algo/structure" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="algo" />
-      <working_directory value="$PROJECT_DIR$/structure" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="algo/structure" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestDeleteByIndex$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestDeleteByVal in algo/structure" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="algo" />
-      <working_directory value="$PROJECT_DIR$/structure" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="algo/structure" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestDeleteByVal$" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Go Test.TestIsEmpty in algo/structure">
     <configuration name="TestFindNodeByIndex in algo/structure" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="algo" />
       <working_directory value="$PROJECT_DIR$/structure" />
@@ -176,7 +132,7 @@
       <pattern value="^TestFindNodeByIndex$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestFindNodeByVal in algo/structure" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestGeneralStack in algo/structure" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="algo" />
       <working_directory value="$PROJECT_DIR$/structure" />
       <framework value="gotest" />
@@ -184,10 +140,10 @@
       <package value="algo/structure" />
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestFindNodeByVal$" />
+      <pattern value="^TestGeneralStack$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestInsertNode in algo/structure" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestIsEmpty in algo/structure" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="algo" />
       <working_directory value="$PROJECT_DIR$/structure" />
       <framework value="gotest" />
@@ -195,16 +151,38 @@
       <package value="algo/structure" />
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestInsertNode$" />
+      <pattern value="^TestIsEmpty$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestPopStack in algo/structure" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="algo" />
+      <working_directory value="$PROJECT_DIR$/structure" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="algo/structure" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestPopStack$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestPushStack in algo/structure" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="algo" />
+      <working_directory value="$PROJECT_DIR$/structure" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="algo/structure" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestPushStack$" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestIsEmpty in algo/structure" />
+        <item itemvalue="Go Test.TestPopStack in algo/structure" />
+        <item itemvalue="Go Test.TestPushStack in algo/structure" />
+        <item itemvalue="Go Test.TestGeneralStack in algo/structure" />
         <item itemvalue="Go Test.TestFindNodeByIndex in algo/structure" />
-        <item itemvalue="Go Test.TestFindNodeByVal in algo/structure" />
-        <item itemvalue="Go Test.TestDeleteByIndex in algo/structure" />
-        <item itemvalue="Go Test.TestDeleteByVal in algo/structure" />
-        <item itemvalue="Go Test.TestInsertNode in algo/structure" />
       </list>
     </recent_temporary>
   </component>
@@ -224,35 +202,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestDeleteByVal_in_algo_structure - 2021.05.19 at 10h 51m 42s.xml">
-      <configuration name="TestDeleteByVal in algo/structure" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestGeneralStack_in_algo_structure - 2021.05.20 at 14h 00m 00s.xml">
+      <configuration name="TestGeneralStack in algo/structure" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestDeleteByIndex_in_algo_structure - 2021.05.19 at 11h 00m 58s.xml">
-      <configuration name="TestDeleteByIndex in algo/structure" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestGeneralStack_in_algo_structure - 2021.05.20 at 14h 00m 46s.xml">
+      <configuration name="TestGeneralStack in algo/structure" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestDeleteByIndex_in_algo_structure - 2021.05.19 at 11h 03m 27s.xml">
-      <configuration name="TestDeleteByIndex in algo/structure" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestGeneralStack_in_algo_structure - 2021.05.20 at 14h 01m 21s.xml">
+      <configuration name="TestGeneralStack in algo/structure" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestDeleteByIndex_in_algo_structure - 2021.05.19 at 11h 03m 46s.xml">
-      <configuration name="TestDeleteByIndex in algo/structure" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestGeneralStack_in_algo_structure - 2021.05.20 at 14h 01m 50s.xml">
+      <configuration name="TestGeneralStack in algo/structure" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestDeleteByIndex_in_algo_structure - 2021.05.19 at 15h 33m 41s.xml">
-      <configuration name="TestDeleteByIndex in algo/structure" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestGeneralStack_in_algo_structure - 2021.05.20 at 14h 04m 52s.xml">
+      <configuration name="TestGeneralStack in algo/structure" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestDeleteByIndex_in_algo_structure - 2021.05.19 at 15h 40m 47s.xml">
-      <configuration name="TestDeleteByIndex in algo/structure" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestPushStack_in_algo_structure - 2021.05.20 at 16h 35m 17s.xml">
+      <configuration name="TestPushStack in algo/structure" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestDeleteByIndex_in_algo_structure - 2021.05.19 at 15h 44m 59s.xml">
-      <configuration name="TestDeleteByIndex in algo/structure" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestPopStack_in_algo_structure - 2021.05.20 at 16h 40m 17s.xml">
+      <configuration name="TestPopStack in algo/structure" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestDeleteByIndex_in_algo_structure - 2021.05.19 at 15h 46m 26s.xml">
-      <configuration name="TestDeleteByIndex in algo/structure" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestPopStack_in_algo_structure - 2021.05.20 at 16h 41m 39s.xml">
+      <configuration name="TestPopStack in algo/structure" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestFindNodeByVal_in_algo_structure - 2021.05.19 at 16h 17m 08s.xml">
-      <configuration name="TestFindNodeByVal in algo/structure" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestIsEmpty_in_algo_structure - 2021.05.20 at 16h 46m 41s.xml">
+      <configuration name="TestIsEmpty in algo/structure" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestFindNodeByIndex_in_algo_structure - 2021.05.19 at 16h 21m 30s.xml">
-      <configuration name="TestFindNodeByIndex in algo/structure" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestIsEmpty_in_algo_structure - 2021.05.20 at 16h 47m 25s.xml">
+      <configuration name="TestIsEmpty in algo/structure" configurationId="GoTestRunConfiguration" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
@@ -271,7 +249,7 @@
     <frame x="0" y="23" width="2560" height="1417" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.23113582" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23113582" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -306,6 +284,12 @@
           <line>83</line>
           <properties />
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/structure/stack_test.go</url>
+          <line>12</line>
+          <properties />
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -360,15 +344,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/structure/link_list.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="143" column="33" selection-start-line="143" selection-start-column="18" selection-end-line="143" selection-end-column="33" />
+        <state relative-caret-position="540">
+          <caret line="30" column="1" lean-forward="true" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/structure/link_list_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="715">
-          <caret line="146" column="38" selection-start-line="146" selection-start-column="38" selection-end-line="146" selection-end-column="38" />
+        <state relative-caret-position="2718">
+          <caret line="151" column="29" lean-forward="true" selection-start-line="151" selection-start-column="29" selection-end-line="151" selection-end-column="29" />
+          <folding>
+            <element signature="e#19#79#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/structure/stack.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/structure/stack_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="27" column="11" lean-forward="true" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
           <folding>
             <element signature="e#19#79#0" expanded="true" />
           </folding>
