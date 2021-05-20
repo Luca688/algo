@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79a3e310-c85b-4b46-9a4d-de078ff8537c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/offer.go" beforeDir="false" afterPath="$PROJECT_DIR$/offer.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/offer_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/offer_test.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,17 +13,37 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/offer.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/offer.go">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="205">
+                  <caret line="22" column="50" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/offer_test.go">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="565">
+                  <caret line="35" column="50" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
+                  <folding>
+                    <element signature="e#14#73#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -46,16 +68,16 @@
         <option value="$PROJECT_DIR$/structure/link_list_test.go" />
         <option value="$PROJECT_DIR$/structure/stack.go" />
         <option value="$PROJECT_DIR$/structure/stack_test.go" />
-        <option value="$PROJECT_DIR$/offer_test.go" />
         <option value="$PROJECT_DIR$/stack_test.go" />
         <option value="$PROJECT_DIR$/stack.go" />
         <option value="$PROJECT_DIR$/link_list.go" />
         <option value="$PROJECT_DIR$/link_list_test.go" />
         <option value="$PROJECT_DIR$/offer.go" />
+        <option value="$PROJECT_DIR$/offer_test.go" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="y" value="23" />
     <option name="width" value="1920" />
     <option name="height" value="1057" />
@@ -112,7 +134,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Test.TestPopStack in algo">
+  <component name="RunManager" selected="Go Test.TestSortLinkListRepeat in algo">
     <configuration name="TestGeneralStack in algo" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="algo" />
       <working_directory value="$PROJECT_DIR$" />
@@ -133,17 +155,6 @@
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
       <pattern value="^TestInsertNode$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestIsEmpty in algo/structure" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="algo" />
-      <working_directory value="$PROJECT_DIR$/structure" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="algo/structure" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestIsEmpty$" />
       <method v="2" />
     </configuration>
     <configuration name="TestPopStack in algo" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -168,13 +179,24 @@
       <pattern value="^TestPopStack$" />
       <method v="2" />
     </configuration>
+    <configuration name="TestSortLinkListRepeat in algo" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="algo" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="algo" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestSortLinkListRepeat$" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestSortLinkListRepeat in algo" />
         <item itemvalue="Go Test.TestPopStack in algo" />
         <item itemvalue="Go Test.TestInsertNode in algo" />
         <item itemvalue="Go Test.TestGeneralStack in algo" />
         <item itemvalue="Go Test.TestPopStack in algo/structure" />
-        <item itemvalue="Go Test.TestIsEmpty in algo/structure" />
       </list>
     </recent_temporary>
   </component>
@@ -194,35 +216,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestGeneralStack_in_algo_structure - 2021.05.20 at 14h 01m 21s.xml">
-      <configuration name="TestGeneralStack in algo/structure" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestSortLinkListRepeat_in_algo - 2021.05.20 at 22h 55m 06s.xml">
+      <configuration name="TestSortLinkListRepeat in algo" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestGeneralStack_in_algo_structure - 2021.05.20 at 14h 01m 50s.xml">
-      <configuration name="TestGeneralStack in algo/structure" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestSortLinkListRepeat_in_algo - 2021.05.20 at 22h 56m 51s.xml">
+      <configuration name="TestSortLinkListRepeat in algo" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestGeneralStack_in_algo_structure - 2021.05.20 at 14h 04m 52s.xml">
-      <configuration name="TestGeneralStack in algo/structure" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestSortLinkListRepeat_in_algo - 2021.05.20 at 22h 58m 25s.xml">
+      <configuration name="TestSortLinkListRepeat in algo" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestPushStack_in_algo_structure - 2021.05.20 at 16h 35m 17s.xml">
-      <configuration name="TestPushStack in algo/structure" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestSortLinkListRepeat_in_algo - 2021.05.20 at 22h 59m 20s.xml">
+      <configuration name="TestSortLinkListRepeat in algo" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestPopStack_in_algo_structure - 2021.05.20 at 16h 40m 17s.xml">
-      <configuration name="TestPopStack in algo/structure" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestSortLinkListRepeat_in_algo - 2021.05.20 at 22h 59m 38s.xml">
+      <configuration name="TestSortLinkListRepeat in algo" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestPopStack_in_algo_structure - 2021.05.20 at 16h 41m 39s.xml">
-      <configuration name="TestPopStack in algo/structure" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestSortLinkListRepeat_in_algo - 2021.05.20 at 23h 02m 40s.xml">
+      <configuration name="TestSortLinkListRepeat in algo" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestIsEmpty_in_algo_structure - 2021.05.20 at 16h 46m 41s.xml">
-      <configuration name="TestIsEmpty in algo/structure" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestSortLinkListRepeat_in_algo - 2021.05.20 at 23h 02m 50s.xml">
+      <configuration name="TestSortLinkListRepeat in algo" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestIsEmpty_in_algo_structure - 2021.05.20 at 16h 47m 25s.xml">
-      <configuration name="TestIsEmpty in algo/structure" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestSortLinkListRepeat_in_algo - 2021.05.20 at 23h 03m 21s.xml">
+      <configuration name="TestSortLinkListRepeat in algo" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestPopStack_in_algo_structure - 2021.05.20 at 16h 49m 55s.xml">
-      <configuration name="TestPopStack in algo/structure" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestSortLinkListRepeat_in_algo - 2021.05.20 at 23h 03m 37s.xml">
+      <configuration name="TestSortLinkListRepeat in algo" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestPopStack_in_algo - 2021.05.20 at 17h 57m 05s.xml">
-      <configuration name="TestPopStack in algo" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestSortLinkListRepeat_in_algo - 2021.05.20 at 23h 03m 55s.xml">
+      <configuration name="TestSortLinkListRepeat in algo" configurationId="GoTestRunConfiguration" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
@@ -238,15 +260,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="2560" height="1417" extended-state="6" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23113582" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.23505655" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32981133" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32981133" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32876712" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -274,13 +296,11 @@
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/structure_test.go</url>
           <line>83</line>
-          <properties />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/stack_test.go</url>
           <line>12</line>
-          <properties />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
@@ -298,20 +318,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sword-refers-to-offer/search_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="14" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sword-refers-to-offer/search.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="16" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/sword-refers-to-offer/search_test.go" />
+    <entry file="file://$PROJECT_DIR$/sword-refers-to-offer/search.go" />
     <entry file="file://$PROJECT_DIR$/go.mod">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -327,37 +335,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/offer_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="12" selection-start-column="12" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stack_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="e#14#74#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stack.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="846">
-          <caret line="49" lean-forward="true" selection-start-line="49" selection-start-column="2" selection-end-line="66" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/stack_test.go" />
+    <entry file="file://$PROJECT_DIR$/stack.go" />
+    <entry file="file://$PROJECT_DIR$/main.go" />
     <entry file="file://$PROJECT_DIR$/structure_test.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3240">
@@ -370,15 +350,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/structure.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="38" column="28" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
+        <state relative-caret-position="230">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/offer.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+        <state relative-caret-position="205">
+          <caret line="22" column="50" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/offer_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="565">
+          <caret line="35" column="50" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
+          <folding>
+            <element signature="e#14#73#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

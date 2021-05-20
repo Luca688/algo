@@ -1,14 +1,49 @@
 package main
 
 
-//在一个排序的链表中，存在重复的结点，请删除该链表中重复的结点，重复的结点不保留，返回链表头指针。 例如，链表1->2->3->3->4->4->5 处理后为 1->2->5
-//示例1
-//输入
-//复制
-//{1,2,3,3,4,4,5}
-//返回值
-//复制
-//{1,2,5}
+//在一个排序的链表中，存在重复的结点，请删除该链表中重复的结点，重复的结点不保留，返回链表头指针。
+// 例如，链表1->1->1->1->1->1->2->3->3->3->3->4->4->5 处理后为 1->2->5
+func SortLinkListRepeat(head *Node) *Node {
+	if head == nil {
+		return head
+	}
+
+	currentNode := head
+	var lastNode *Node
+
+	for currentNode != nil{
+
+		if currentNode.Next == nil {
+			break
+		}else {
+			//当前元素值与下一个相等
+			if currentNode.Val == currentNode.Next.Val {
+				//遍历丢弃中间相同的元素
+				for  {
+					if currentNode.Next != nil && currentNode.Val == currentNode.Next.Val {
+						currentNode.Next = currentNode.Next.Next
+					}else {
+						break
+					}
+				}
+				//头节点就有相同元素
+				if lastNode == nil {
+					lastNode = currentNode.Next
+					head = lastNode
+				}else {
+					lastNode.Next = currentNode.Next
+				}
+				currentNode = currentNode.Next
+
+			}else {
+				lastNode = currentNode
+				currentNode = currentNode.Next
+			}
+		}
+	}
+
+	return head
+}
 
 
 
