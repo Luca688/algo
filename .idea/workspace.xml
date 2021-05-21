@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79a3e310-c85b-4b46-9a4d-de078ff8537c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/offer.go" beforeDir="false" afterPath="$PROJECT_DIR$/offer.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/offer_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/offer_test.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,12 +15,12 @@
   <component name="FileEditorManager">
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+        <leaf>
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/offer.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="51">
-                  <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+                <state relative-caret-position="846">
+                  <caret line="76" column="13" lean-forward="true" selection-start-line="76" selection-start-column="13" selection-end-line="76" selection-end-column="13" />
                 </state>
               </provider>
             </entry>
@@ -30,8 +32,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/offer_test.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="531">
-                  <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
+                <state relative-caret-position="1044">
+                  <caret line="62" column="59" lean-forward="true" selection-start-line="62" selection-start-column="59" selection-end-line="62" selection-end-column="59" />
                   <folding>
                     <element signature="e#14#73#0" expanded="true" />
                   </folding>
@@ -70,8 +72,8 @@
         <option value="$PROJECT_DIR$/stack.go" />
         <option value="$PROJECT_DIR$/link_list.go" />
         <option value="$PROJECT_DIR$/link_list_test.go" />
-        <option value="$PROJECT_DIR$/offer_test.go" />
         <option value="$PROJECT_DIR$/offer.go" />
+        <option value="$PROJECT_DIR$/offer_test.go" />
       </list>
     </option>
   </component>
@@ -132,7 +134,17 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Test.TestSortLinkListRepeat in algo">
+  <component name="RunManager" selected="Go Test.TestIncreasingLinkMerge in algo">
+    <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="algo" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <go_parameters value="-i" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/" />
+      <package value="algo" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
     <configuration name="TestGeneralStack in algo" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="algo" />
       <working_directory value="$PROJECT_DIR$" />
@@ -142,6 +154,17 @@
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
       <pattern value="^TestGeneralStack$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestIncreasingLinkMerge in algo" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="algo" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="algo" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestIncreasingLinkMerge$" />
       <method v="2" />
     </configuration>
     <configuration name="TestInsertNode in algo" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -166,17 +189,6 @@
       <pattern value="^TestPopStack$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestPopStack in algo/structure" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="algo" />
-      <working_directory value="$PROJECT_DIR$/structure" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="algo/structure" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestPopStack$" />
-      <method v="2" />
-    </configuration>
     <configuration name="TestSortLinkListRepeat in algo" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="algo" />
       <working_directory value="$PROJECT_DIR$" />
@@ -188,13 +200,24 @@
       <pattern value="^TestSortLinkListRepeat$" />
       <method v="2" />
     </configuration>
+    <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
+      <module name="algo" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <go_parameters value="-i" />
+      <framework value="gotest" />
+      <kind value="DIRECTORY" />
+      <package value="algo" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestIncreasingLinkMerge in algo" />
         <item itemvalue="Go Test.TestSortLinkListRepeat in algo" />
         <item itemvalue="Go Test.TestPopStack in algo" />
         <item itemvalue="Go Test.TestInsertNode in algo" />
         <item itemvalue="Go Test.TestGeneralStack in algo" />
-        <item itemvalue="Go Test.TestPopStack in algo/structure" />
       </list>
     </recent_temporary>
   </component>
@@ -214,35 +237,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestSortLinkListRepeat_in_algo - 2021.05.20 at 22h 59m 20s.xml">
-      <configuration name="TestSortLinkListRepeat in algo" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestIncreasingLinkMerge_in_algo - 2021.05.21 at 16h 30m 20s.xml">
+      <configuration name="TestIncreasingLinkMerge in algo" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestSortLinkListRepeat_in_algo - 2021.05.20 at 22h 59m 38s.xml">
-      <configuration name="TestSortLinkListRepeat in algo" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestIncreasingLinkMerge_in_algo - 2021.05.21 at 16h 30m 45s.xml">
+      <configuration name="TestIncreasingLinkMerge in algo" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestSortLinkListRepeat_in_algo - 2021.05.20 at 23h 02m 40s.xml">
-      <configuration name="TestSortLinkListRepeat in algo" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestIncreasingLinkMerge_in_algo - 2021.05.21 at 16h 32m 21s.xml">
+      <configuration name="TestIncreasingLinkMerge in algo" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestSortLinkListRepeat_in_algo - 2021.05.20 at 23h 02m 50s.xml">
-      <configuration name="TestSortLinkListRepeat in algo" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestIncreasingLinkMerge_in_algo - 2021.05.21 at 16h 32m 32s.xml">
+      <configuration name="TestIncreasingLinkMerge in algo" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestSortLinkListRepeat_in_algo - 2021.05.20 at 23h 03m 21s.xml">
-      <configuration name="TestSortLinkListRepeat in algo" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestIncreasingLinkMerge_in_algo - 2021.05.21 at 16h 54m 13s.xml">
+      <configuration name="TestIncreasingLinkMerge in algo" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestSortLinkListRepeat_in_algo - 2021.05.20 at 23h 03m 37s.xml">
-      <configuration name="TestSortLinkListRepeat in algo" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestIncreasingLinkMerge_in_algo - 2021.05.21 at 16h 54m 20s.xml">
+      <configuration name="TestIncreasingLinkMerge in algo" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestSortLinkListRepeat_in_algo - 2021.05.20 at 23h 03m 55s.xml">
-      <configuration name="TestSortLinkListRepeat in algo" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestIncreasingLinkMerge_in_algo - 2021.05.21 at 17h 02m 51s.xml">
+      <configuration name="TestIncreasingLinkMerge in algo" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestSortLinkListRepeat_in_algo - 2021.05.20 at 23h 04m 51s.xml">
-      <configuration name="TestSortLinkListRepeat in algo" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestIncreasingLinkMerge_in_algo - 2021.05.21 at 17h 02m 59s.xml">
+      <configuration name="TestIncreasingLinkMerge in algo" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestSortLinkListRepeat_in_algo - 2021.05.20 at 23h 06m 01s.xml">
-      <configuration name="TestSortLinkListRepeat in algo" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestIncreasingLinkMerge_in_algo - 2021.05.21 at 17h 06m 17s.xml">
+      <configuration name="TestIncreasingLinkMerge in algo" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestSortLinkListRepeat_in_algo - 2021.05.20 at 23h 06m 31s.xml">
-      <configuration name="TestSortLinkListRepeat in algo" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestIncreasingLinkMerge_in_algo - 2021.05.21 at 17h 07m 35s.xml">
+      <configuration name="TestIncreasingLinkMerge in algo" configurationId="GoTestRunConfiguration" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
@@ -258,15 +281,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="6" />
+    <frame x="0" y="23" width="2560" height="1417" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.23505655" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.23113582" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32981133" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32876712" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32830188" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -274,7 +297,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32739726" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32679245" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -300,6 +323,12 @@
           <url>file://$PROJECT_DIR$/stack_test.go</url>
           <line>12</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/offer_test.go</url>
+          <line>64</line>
+          <properties />
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -355,8 +384,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/offer_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="531">
-          <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
+        <state relative-caret-position="1044">
+          <caret line="62" column="59" lean-forward="true" selection-start-line="62" selection-start-column="59" selection-end-line="62" selection-end-column="59" />
           <folding>
             <element signature="e#14#73#0" expanded="true" />
           </folding>
@@ -365,8 +394,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/offer.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+        <state relative-caret-position="846">
+          <caret line="76" column="13" lean-forward="true" selection-start-line="76" selection-start-column="13" selection-end-line="76" selection-end-column="13" />
         </state>
       </provider>
     </entry>

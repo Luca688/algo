@@ -1,6 +1,5 @@
 package main
 
-
 //删除链表中重复的节点
 //在一个排序的链表中，存在重复的结点，请删除该链表中重复的结点，重复的结点不保留，返回链表头指针。
 // 例如，链表1->1->1->1->1->1->2->3->3->3->3->4->4->5 处理后为 1->2->5
@@ -48,8 +47,48 @@ func SortLinkListRepeat(head *Node) *Node {
 
 
 
-//用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。
+//输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则。
+//{1,3,5},{2,4,6} 返回值 {1,2,3,4,5,6}
+//{2,11,77,79,80}{3,4,5,82,83,84} 返回  {2,3,4,5,11,77,79,80,83,84}
 
-func TwoStackImplementQue(){
+func IncreasingLinkMerge(head1 *Node, head2 *Node) *Node{
+
+	var res *Node
+	var resTail *Node
+	leftCurrent := head1
+	rightCurrent := head2
+
+	for {
+		if leftCurrent == nil {
+			resTail.Next = rightCurrent
+			break
+		}
+		if rightCurrent == nil{
+			resTail.Next = leftCurrent
+			break
+		}
+
+		if leftCurrent.Val <= rightCurrent.Val {
+
+			if res == nil {
+				res = leftCurrent
+			}else {
+				resTail.Next = leftCurrent
+			}
+			resTail = leftCurrent
+			leftCurrent = leftCurrent.Next
+		}else {
+
+			if res == nil{
+				res = rightCurrent
+			}else {
+				resTail.Next = rightCurrent
+			}
+			resTail = rightCurrent
+			rightCurrent = rightCurrent.Next
+		}
+	}
+
+	return res
 
 }
