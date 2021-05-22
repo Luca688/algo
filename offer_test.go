@@ -89,3 +89,20 @@ func TestReciprocalKNode(t *testing.T){
 	assert.Equal(t, 1, res)
 
 }
+
+func TestEntryNodeOfLoop(t *testing.T) {
+	testSlice := []int{1,2,3,4,5}
+	head := GeneralLinkList(testSlice)
+
+	res := EntryNodeOfLoop(head)
+	assert.Equal(t, true, res == nil)
+
+
+	head.Next.Next.Next.Next.Next = head
+	res = EntryNodeOfLoop(head)
+	assert.Equal(t, head, res)
+
+	head.Next.Next.Next.Next.Next = head.Next.Next
+	res = EntryNodeOfLoop(head)
+	assert.Equal(t, 3, res.Val)
+}

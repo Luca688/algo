@@ -1,6 +1,8 @@
 package main
 
-import "errors"
+import (
+	"errors"
+)
 
 //删除链表中重复的节点
 //在一个排序的链表中，存在重复的结点，请删除该链表中重复的结点，重复的结点不保留，返回链表头指针。
@@ -144,4 +146,27 @@ func ReciprocalKNode(head *Node, k int) (res int, err error) {
 		return slowNode.Val, nil
 	}
 
+}
+
+//给一个链表，若其中包含环，请找出该链表的环的入口结点，否则，输出null。
+//https://my.oschina.net/songjilong/blog/3159816
+func EntryNodeOfLoop(head *Node) *Node{
+
+	//1.遍历一遍有重复的就是环
+	allNode := make(map[*Node]*Node)
+	currentNode := head
+	var res *Node
+	for currentNode != nil  {
+		_, ok := allNode[currentNode]
+		if ok == false {
+			allNode[currentNode] = currentNode
+			currentNode = currentNode.Next
+		}else {
+			res = currentNode
+			break
+		}
+	}
+	return res
+
+	//2. 双指针
 }
