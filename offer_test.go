@@ -106,3 +106,24 @@ func TestEntryNodeOfLoop(t *testing.T) {
 	res = EntryNodeOfLoop(head)
 	assert.Equal(t, 3, res.Val)
 }
+
+func TestFindFirstCommonNode(t *testing.T) {
+	leftSlice := []int{1,2,3,4,5}
+	leftHead := GeneralLinkList(leftSlice)
+
+	rightSlice := []int{1,2,3,4,5}
+	rightHead := GeneralLinkList(rightSlice)
+
+	res := FindFirstCommonNode(leftHead, rightHead)
+	assert.Equal(t, true, res == nil)
+
+	newNode := GeneralNode(233)
+	leftHead.Next.Next.Next.Next.Next = newNode
+	rightHead.Next.Next.Next.Next.Next = newNode
+	res = FindFirstCommonNode(leftHead, rightHead)
+	assert.Equal(t, 233, res.Val)
+
+	leftHead.Next.Next.Next.Next.Next = rightHead.Next.Next
+	res = FindFirstCommonNode(leftHead, rightHead)
+	assert.Equal(t, 3, res.Val)
+}

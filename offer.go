@@ -170,3 +170,36 @@ func EntryNodeOfLoop(head *Node) *Node{
 
 	//2. 双指针
 }
+
+//输入两个无环的单链表，找出它们的第一个公共结点。
+func FindFirstCommonNode( left *Node ,  right *Node ) *Node {
+
+	var res *Node
+	allNode := make(map[*Node]*Node)
+
+	leftNode := left
+	rightNode := right
+
+	for leftNode != nil && rightNode != nil  {
+
+		_, hasLeft := allNode[leftNode]
+		if hasLeft {
+			res = leftNode
+			break
+		}else {
+			allNode[leftNode] = leftNode
+			leftNode = leftNode.Next
+		}
+		_, hasRight := allNode[rightNode]
+		if hasRight {
+			res = rightNode
+			break
+		}else {
+			allNode[rightNode] = rightNode
+			rightNode = rightNode.Next
+		}
+	}
+
+	return  res
+
+}
