@@ -1,5 +1,7 @@
 package main
 
+import "errors"
+
 //删除链表中重复的节点
 //在一个排序的链表中，存在重复的结点，请删除该链表中重复的结点，重复的结点不保留，返回链表头指针。
 // 例如，链表1->1->1->1->1->1->2->3->3->3->3->4->4->5 处理后为 1->2->5
@@ -90,5 +92,56 @@ func IncreasingLinkMerge(head1 *Node, head2 *Node) *Node{
 	}
 
 	return res
+
+}
+
+//输入一个链表，输出该链表中倒数第k个结点。
+//如果该链表长度小于k，请返回空。
+//{1,2,3,4,5},1   {5}
+
+func ReciprocalKNode(head *Node, k int) (res int, err error) {
+
+	fast := 1
+	fastNode := head
+	slow := 1
+	slowNode := head
+
+	if head == nil {
+		return 0, errors.New("empty link")
+	}
+	if k <= 0{
+		return 0, errors.New("k less 0")
+	}
+	//note fast <= k
+	for fast = 1; fast < k; fast++ {
+		if fastNode == nil{
+			break
+		}else {
+			fastNode = fastNode.Next
+		}
+
+	}
+
+	if fast < k{
+
+		return 0 , errors.New("length less then k")
+	}
+
+	for {
+		if fastNode.Next == nil {
+			break
+		}else {
+			slow++
+			fast++
+			slowNode = slowNode.Next
+			fastNode = fastNode.Next
+		}
+	}
+
+	if k == 1{
+		return  fastNode.Val, nil
+	}else {
+		return slowNode.Val, nil
+	}
 
 }

@@ -14,6 +14,6 @@ yarn-error.log
 /public/js
 /public/img
 /resources/views
-/.idea
+/.idea/
 /.vscode/
 /storage

@@ -68,3 +68,24 @@ func TestIncreasingLinkMerge(t *testing.T) {
 	assert.Equal(t, 83, afterMerge.Next.Next.Next.Next.Next.Next.Next.Next.Next.Val)
 	assert.Equal(t, 84, afterMerge.Next.Next.Next.Next.Next.Next.Next.Next.Next.Next.Val)
 }
+
+func TestReciprocalKNode(t *testing.T){
+	testSlice := []int{1,2,3,4,5}
+	head := GeneralLinkList(testSlice)
+
+	res, _ := ReciprocalKNode(head, 1)
+	assert.Equal(t, 5, res)
+
+	res, _ = ReciprocalKNode(head, 2)
+	assert.Equal(t, 4, res)
+
+	res, _ = ReciprocalKNode(head, 3)
+	assert.Equal(t, 3, res)
+
+	res, _ = ReciprocalKNode(head, 4)
+	assert.Equal(t, 2, res)
+
+	res, _ = ReciprocalKNode(head, 5)
+	assert.Equal(t, 1, res)
+
+}
