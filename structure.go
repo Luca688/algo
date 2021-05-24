@@ -2,23 +2,23 @@ package main
 
 import "errors"
 
-type Node struct {
+type ListNode struct {
 	Val  int
-	Next *Node
-	Prev *Node
+	Next *ListNode
+	Prev *ListNode
 }
 
-func GeneralNode(val int) *Node {
+func GeneralListNode(val int) *ListNode {
 
-	return &Node{Val: val}
+	return &ListNode{Val: val}
 }
 
-func GeneralLinkList(slice []int) *Node {
-	var head *Node
-	var currentNode *Node
+func GeneralLinkList(slice []int) *ListNode {
+	var head *ListNode
+	var currentNode *ListNode
 
 	for _, val := range slice {
-		node := GeneralNode(val)
+		node := GeneralListNode(val)
 		if head == nil {
 			head = node
 		} else {
@@ -31,12 +31,12 @@ func GeneralLinkList(slice []int) *Node {
 }
 
 //insert test ok
-func (head *Node) InsertNode(val int, index int) (headNode *Node, insertRes bool, err error) {
+func (head *ListNode) InsertNode(val int, index int) (headNode *ListNode, insertRes bool, err error) {
 
 	if index < 0 {
 		return nil, false, errors.New("error_index_less_then_0")
 	}
-	node := GeneralNode(val)
+	node := GeneralListNode(val)
 	if index == 0 {
 		node.Next = head
 		return node, true, nil
@@ -64,8 +64,8 @@ func (head *Node) InsertNode(val int, index int) (headNode *Node, insertRes bool
 }
 
 //delete test
-func (head *Node) DeleteByVal(val int) (h *Node, res bool) {
-	var prev *Node
+func (head *ListNode) DeleteByVal(val int) (h *ListNode, res bool) {
+	var prev *ListNode
 	currentNode := head
 	hasVal := false
 
@@ -95,7 +95,7 @@ func (head *Node) DeleteByVal(val int) (h *Node, res bool) {
 }
 
 //delete test
-func (head *Node) DeleteByIndex(index int) (h *Node, res bool, err error) {
+func (head *ListNode) DeleteByIndex(index int) (h *ListNode, res bool, err error) {
 	if index < 1 {
 		return head, false, errors.New("delete index less than 0")
 	}
@@ -128,7 +128,7 @@ func (head *Node) DeleteByIndex(index int) (h *Node, res bool, err error) {
 }
 
 //find test
-func (head *Node) FindNodeByVal(val int) bool {
+func (head *ListNode) FindNodeByVal(val int) bool {
 	currentNode := head
 
 	for currentNode != nil {
@@ -141,7 +141,7 @@ func (head *Node) FindNodeByVal(val int) bool {
 	return false
 }
 
-func (head *Node) FindNodeByIndex(index int) (node *Node, err error) {
+func (head *ListNode) FindNodeByIndex(index int) (node *ListNode, err error) {
 	if index <= 0 {
 		return nil, errors.New("index less len 0")
 	}
@@ -158,16 +158,29 @@ func (head *Node) FindNodeByIndex(index int) (node *Node, err error) {
 	return nil, nil
 }
 
+
+
 /**
 stack
 */
 
-func GeneralStack(slice []int) *Node {
+type StackNode struct {
+	Val  int
+	Next *StackNode
+	Prev *StackNode
+}
 
-	var head *Node
+func GeneralStackNode(val int) *StackNode {
+
+	return &StackNode{Val: val}
+}
+
+func GeneralStack(slice []int) *StackNode {
+
+	var head *StackNode
 
 	for _, val := range slice {
-		node := GeneralNode(val)
+		node := GeneralStackNode(val)
 		node.Next = head
 		head = node
 	}
@@ -177,14 +190,14 @@ func GeneralStack(slice []int) *Node {
 
 //push
 
-func PushStack(head *Node, val int) *Node {
-	node := GeneralNode(val)
+func PushStack(head *StackNode, val int) *StackNode {
+	node := GeneralStackNode(val)
 	node.Next = head
 	return node
 }
 
 //pop
-func PopStack(heaad *Node) (newHead *Node, val int) {
+func PopStack(heaad *StackNode) (newHead *StackNode, val int) {
 
 	if heaad.IsEmpty() {
 		return heaad, -999
@@ -195,7 +208,7 @@ func PopStack(heaad *Node) (newHead *Node, val int) {
 
 //isEmpty
 
-func (head *Node) IsEmpty() bool {
+func (head *StackNode) IsEmpty() bool {
 	if head == nil {
 		return true
 	} else {

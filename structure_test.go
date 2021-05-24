@@ -179,7 +179,7 @@ func TestPushStack(t *testing.T) {
 }
 
 func TestPopStack(t *testing.T) {
-	var head *Node
+	var head *StackNode
 	head, v := PopStack(head)
 	assert.Equal(t, -999, v)
 
@@ -192,7 +192,7 @@ func TestPopStack(t *testing.T) {
 }
 
 func TestIsEmpty(t *testing.T) {
-	var head *Node
+	var head *StackNode
 	isEmpty := head.IsEmpty()
 	assert.Equal(t, true, isEmpty)
 

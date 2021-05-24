@@ -116,7 +116,7 @@ func TestFindFirstCommonNode(t *testing.T) {
 	res := FindFirstCommonNode(leftHead, rightHead)
 	assert.Equal(t, true, res == nil)
 
-	newNode := GeneralNode(233)
+	newNode := GeneralListNode(233)
 	leftHead.Next.Next.Next.Next.Next = newNode
 	rightHead.Next.Next.Next.Next.Next = newNode
 	res = FindFirstCommonNode(leftHead, rightHead)
