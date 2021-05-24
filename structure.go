@@ -33,7 +33,7 @@ func GeneralLinkList(slice []int) *Node {
 //insert test ok
 func (head *Node) InsertNode(val int, index int) (headNode *Node, insertRes bool, err error) {
 
-	if index  < 0{
+	if index < 0 {
 		return nil, false, errors.New("error_index_less_then_0")
 	}
 	node := GeneralNode(val)
@@ -44,14 +44,14 @@ func (head *Node) InsertNode(val int, index int) (headNode *Node, insertRes bool
 
 	i := 1
 	currentNode := head
-	for  {
+	for {
 		if i == index {
 			break
-		}else {
+		} else {
 			i++
 			if currentNode.Next == nil {
 				break
-			}else {
+			} else {
 				currentNode = currentNode.Next
 			}
 		}
@@ -80,12 +80,12 @@ func (head *Node) DeleteByVal(val int) (h *Node, res bool) {
 
 	}
 
-	if hasVal == false {
+	if !hasVal {
 		return head, false
 	}
 
 	//delete head
-	if prev == nil && hasVal == true {
+	if prev == nil && !hasVal {
 		return currentNode.Next, true
 	}
 	//删除非头节点
@@ -150,7 +150,6 @@ func (head *Node) FindNodeByIndex(index int) (node *Node, err error) {
 	for current != nil {
 		if i == index {
 			return current, nil
-			break
 		} else {
 			i++
 			current = current.Next
@@ -159,10 +158,9 @@ func (head *Node) FindNodeByIndex(index int) (node *Node, err error) {
 	return nil, nil
 }
 
-
 /**
 stack
- */
+*/
 
 func GeneralStack(slice []int) *Node {
 
@@ -182,11 +180,11 @@ func GeneralStack(slice []int) *Node {
 func PushStack(head *Node, val int) *Node {
 	node := GeneralNode(val)
 	node.Next = head
-	return  node
+	return node
 }
 
 //pop
-func PopStack(heaad *Node) (newHead *Node, val int){
+func PopStack(heaad *Node) (newHead *Node, val int) {
 
 	if heaad.IsEmpty() {
 		return heaad, -999
@@ -197,10 +195,10 @@ func PopStack(heaad *Node) (newHead *Node, val int){
 
 //isEmpty
 
-func (head *Node)IsEmpty() bool {
+func (head *Node) IsEmpty() bool {
 	if head == nil {
-		return  true
-	}else {
-		return  false
+		return true
+	} else {
+		return false
 	}
 }
