@@ -5,9 +5,9 @@ import (
 	"testing"
 )
 
-func TestSortLinkListRepeat(t *testing.T)  {
+func TestSortLinkListRepeat(t *testing.T) {
 
-	testHeadRepeat :=  []int{1,1,1,1,1,2,3,3,3,4,4,5,6}
+	testHeadRepeat := []int{1, 1, 1, 1, 1, 2, 3, 3, 3, 4, 4, 5, 6}
 
 	repeatLink := GeneralLinkList(testHeadRepeat)
 
@@ -17,7 +17,7 @@ func TestSortLinkListRepeat(t *testing.T)  {
 	assert.Equal(t, 5, newRepeatLink.Next.Val)
 	assert.Equal(t, 6, newRepeatLink.Next.Next.Val)
 
-	testHeadRepeat =  []int{1,1,1,1,1,2,3,3,3,4,4,5,6,6}
+	testHeadRepeat = []int{1, 1, 1, 1, 1, 2, 3, 3, 3, 4, 4, 5, 6, 6}
 
 	repeatLink = GeneralLinkList(testHeadRepeat)
 	newRepeatLink = SortLinkListRepeat(repeatLink)
@@ -26,7 +26,7 @@ func TestSortLinkListRepeat(t *testing.T)  {
 	assert.Equal(t, 5, newRepeatLink.Next.Val)
 	assert.Equal(t, true, newRepeatLink.Next.Next == nil)
 
-	testHeadRepeat =  []int{1,2, 3}
+	testHeadRepeat = []int{1, 2, 3}
 
 	repeatLink = GeneralLinkList(testHeadRepeat)
 	newRepeatLink = SortLinkListRepeat(repeatLink)
@@ -37,8 +37,8 @@ func TestSortLinkListRepeat(t *testing.T)  {
 
 func TestIncreasingLinkMerge(t *testing.T) {
 
-	left := []int{1,3,5}
-	right := []int{2,4,6}
+	left := []int{1, 3, 5}
+	right := []int{2, 4, 6}
 	leftLink := GeneralLinkList(left)
 	rightLink := GeneralLinkList(right)
 	afterMerge := IncreasingLinkMerge(leftLink, rightLink)
@@ -50,8 +50,8 @@ func TestIncreasingLinkMerge(t *testing.T) {
 	assert.Equal(t, 5, afterMerge.Next.Next.Next.Next.Val)
 	assert.Equal(t, 6, afterMerge.Next.Next.Next.Next.Next.Val)
 
-	left = []int{2,11,77,79,80}
-	right = []int{3,4,5,82,83,84}
+	left = []int{2, 11, 77, 79, 80}
+	right = []int{3, 4, 5, 82, 83, 84}
 	leftLink = GeneralLinkList(left)
 	rightLink = GeneralLinkList(right)
 	afterMerge = IncreasingLinkMerge(leftLink, rightLink)
@@ -69,8 +69,8 @@ func TestIncreasingLinkMerge(t *testing.T) {
 	assert.Equal(t, 84, afterMerge.Next.Next.Next.Next.Next.Next.Next.Next.Next.Next.Val)
 }
 
-func TestReciprocalKNode(t *testing.T){
-	testSlice := []int{1,2,3,4,5}
+func TestReciprocalKNode(t *testing.T) {
+	testSlice := []int{1, 2, 3, 4, 5}
 	head := GeneralLinkList(testSlice)
 
 	res, _ := ReciprocalKNode(head, 1)
@@ -91,12 +91,11 @@ func TestReciprocalKNode(t *testing.T){
 }
 
 func TestEntryNodeOfLoop(t *testing.T) {
-	testSlice := []int{1,2,3,4,5}
+	testSlice := []int{1, 2, 3, 4, 5}
 	head := GeneralLinkList(testSlice)
 
 	res := EntryNodeOfLoop(head)
 	assert.Equal(t, true, res == nil)
-
 
 	head.Next.Next.Next.Next.Next = head
 	res = EntryNodeOfLoop(head)
@@ -108,10 +107,10 @@ func TestEntryNodeOfLoop(t *testing.T) {
 }
 
 func TestFindFirstCommonNode(t *testing.T) {
-	leftSlice := []int{1,2,3,4,5}
+	leftSlice := []int{1, 2, 3, 4, 5}
 	leftHead := GeneralLinkList(leftSlice)
 
-	rightSlice := []int{1,2,3,4,5}
+	rightSlice := []int{1, 2, 3, 4, 5}
 	rightHead := GeneralLinkList(rightSlice)
 
 	res := FindFirstCommonNode(leftHead, rightHead)
