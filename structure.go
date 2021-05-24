@@ -85,7 +85,7 @@ func (head *Node) DeleteByVal(val int) (h *Node, res bool) {
 	}
 
 	//delete head
-	if prev == nil && !hasVal {
+	if prev == nil && hasVal {
 		return currentNode.Next, true
 	}
 	//删除非头节点
