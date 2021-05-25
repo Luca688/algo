@@ -6,9 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-
 var testSlice = []int{1, 2, 3, 4, 5, 6}
-
 
 func TestGeneralLinkList(t *testing.T) {
 	head := GeneralLinkList(testSlice)
@@ -23,7 +21,7 @@ func TestGeneralLinkList(t *testing.T) {
 
 func TestInsertNode(t *testing.T) {
 	head := GeneralLinkList(testSlice)
-	_, _, err :=head.InsertNode(0, -1)
+	_, _, err := head.InsertNode(0, -1)
 	assert.NotEqual(t, err, nil)
 	t.Logf(err.Error())
 
@@ -101,7 +99,7 @@ func TestDeleteByIndex(t *testing.T) {
 	t.Log("dellete  1 success")
 
 	head = GeneralLinkList(testSlice)
-	head , r, err := head.DeleteByIndex(3)
+	head, r, err := head.DeleteByIndex(3)
 	assert.Equal(t, true, r)
 	assert.Equal(t, nil, err)
 	assert.Equal(t, testSlice[1], head.Next.Val)
@@ -109,7 +107,7 @@ func TestDeleteByIndex(t *testing.T) {
 	t.Log("dellete  middle success")
 
 	head = GeneralLinkList(testSlice)
-	head , result, err := head.DeleteByIndex(6)
+	head, result, err := head.DeleteByIndex(6)
 	assert.Equal(t, true, result)
 	assert.Equal(t, nil, err)
 	assert.Equal(t, testSlice[4], head.Next.Next.Next.Next.Val)
@@ -154,12 +152,9 @@ func TestFindNodeByIndex(t *testing.T) {
 
 }
 
-
-
 /**
 stack
 */
-
 
 var testStackSlice = []int{6, 5, 4, 3, 2, 1, 0}
 
@@ -199,4 +194,22 @@ func TestIsEmpty(t *testing.T) {
 	head = GeneralStack(testStackSlice)
 	isEmpty = head.IsEmpty()
 	assert.Equal(t, false, isEmpty)
+}
+
+func TestGeneralFullBinaryTree(t *testing.T) {
+	/***
+			1
+		2		3
+	   4 5		6 7
+	  8
+		**/
+	testSlice := []int{1, 2, 3, 4, 5, 6, 7, 8}
+	head := GeneralFullBinaryTree(testSlice)
+	assert.Equal(t, 1, head.Val)
+	assert.Equal(t, 2, head.LeftChild.Val)
+	assert.Equal(t, 4, head.LeftChild.LeftChild.Val)
+	assert.Equal(t, 8, head.LeftChild.LeftChild.LeftChild.Val)
+
+	assert.Equal(t, 3, head.RightChild.Val)
+	assert.Equal(t, 7, head.RightChild.RightChild.Val)
 }

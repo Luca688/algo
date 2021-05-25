@@ -1,6 +1,10 @@
 package main
 
-import "errors"
+//https://www.cnblogs.com/flmei/p/10768617.html
+
+import (
+	"errors"
+)
 
 type ListNode struct {
 	Val  int
@@ -158,8 +162,6 @@ func (head *ListNode) FindNodeByIndex(index int) (node *ListNode, err error) {
 	return nil, nil
 }
 
-
-
 /**
 stack
 */
@@ -214,4 +216,55 @@ func (head *StackNode) IsEmpty() bool {
 	} else {
 		return false
 	}
+}
+
+/***
+tree
+**/
+
+type BinaryTreeNode struct {
+	LeftChild  *BinaryTreeNode
+	RightChild *BinaryTreeNode
+	Val        int
+}
+
+func NewBinaryTreeNode(val int) *BinaryTreeNode {
+	return &BinaryTreeNode{Val: val}
+}
+
+func GeneralFullBinaryTree(slice []int) *BinaryTreeNode {
+
+	var root *BinaryTreeNode
+
+	if len(slice) <= 0 {
+		return nil
+	}
+
+	root = NewBinaryTreeNode(slice[0])
+	var currentNodeList []*BinaryTreeNode
+	// var nextNodeList []*BinaryTreeNode
+	currentNodeList = append(currentNodeList, root)
+
+	sliceIndex := 1
+
+	for len(currentNodeList) > 0 {
+		var tmpNextList []*BinaryTreeNode
+		for _, currentNode := range currentNodeList {
+			currentNode.LeftChild = NewBinaryTreeNode(slice[sliceIndex])
+			tmpNextList = append(tmpNextList, currentNode.LeftChild)
+			sliceIndex++
+			if sliceIndex >= len(slice) {
+				return root
+			}
+			currentNode.RightChild = NewBinaryTreeNode(slice[sliceIndex])
+			tmpNextList = append(tmpNextList, currentNode.RightChild)
+			sliceIndex++
+			if sliceIndex >= len(slice) {
+				return root
+			}
+		}
+		currentNodeList = tmpNextList
+	}
+
+	return root
 }
