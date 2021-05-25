@@ -268,3 +268,63 @@ func GeneralFullBinaryTree(slice []int) *BinaryTreeNode {
 
 	return root
 }
+
+func (root *BinaryTreeNode) LevelOrder() []int {
+	var res []int
+	var currentNodeList []*BinaryTreeNode
+
+	currentNodeList = append(currentNodeList, root)
+
+	for len(currentNodeList) > 0 {
+		var nextNodeList []*BinaryTreeNode
+		for _, currentNode := range currentNodeList {
+			if currentNode != nil {
+				res = append(res, currentNode.Val)
+				if currentNode.LeftChild != nil {
+					nextNodeList = append(nextNodeList, currentNode.LeftChild)
+				}
+				if currentNode.RightChild != nil {
+					nextNodeList = append(nextNodeList, currentNode.RightChild)
+				}
+			}
+		}
+		currentNodeList = nextNodeList
+	}
+	return res
+}
+
+//根左右
+func (root *BinaryTreeNode) PrevOrderByIteration() []int {
+	var res []int
+	var currentNodeList []*BinaryTreeNode
+	currentNode := root
+	for {
+		if currentNode == nil {
+			break
+		} else {
+			res = append(res, currentNode.Val)
+
+			var newNodes []*BinaryTreeNode
+
+			if currentNode.LeftChild != nil {
+				newNodes = append(newNodes, currentNode.LeftChild)
+			}
+			if currentNode.RightChild != nil {
+				newNodes = append(newNodes, currentNode.RightChild)
+			}
+
+			if currentNodeList == nil {
+				currentNodeList = newNodes
+			} else {
+				currentNodeList = append(newNodes, currentNodeList[1:]...)
+			}
+
+			if len(currentNodeList) > 0 {
+				currentNode = currentNodeList[0]
+			} else {
+				currentNode = nil
+			}
+		}
+	}
+	return res
+}
