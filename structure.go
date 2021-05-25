@@ -328,3 +328,23 @@ func (root *BinaryTreeNode) PrevOrderByIteration() []int {
 	}
 	return res
 }
+
+func (root *BinaryTreeNode) PrevOrderByRecursive() []int {
+	var res []int
+	PrevOrderByRecursiveSub(root, res)
+	return res
+}
+func PrevOrderByRecursiveSub(node *BinaryTreeNode, res []int) {
+
+	if node != nil {
+		res = append(res, node.Val)
+		if node.LeftChild != nil {
+			PrevOrderByRecursiveSub(node.LeftChild, res)
+		}
+		if node.RightChild != nil {
+			PrevOrderByRecursiveSub(node.RightChild, res)
+		}
+	} else {
+		return
+	}
+}

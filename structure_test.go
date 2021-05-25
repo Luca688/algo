@@ -241,3 +241,18 @@ func TestPrevOrderByIteration(t *testing.T) {
 	assert.Equal(t, 6, res[6])
 	assert.Equal(t, 7, res[7])
 }
+
+func TestPrevOrderByRecursive(t *testing.T) {
+	testSlice := []int{1, 2, 3, 4, 5, 6, 7, 8}
+	root := GeneralFullBinaryTree(testSlice)
+	res := root.PrevOrderByRecursive()
+	//1 2 4 8 5 3 6 7
+	assert.Equal(t, 1, res[0])
+	// assert.Equal(t, 2, res[1])
+	// assert.Equal(t, 4, res[2])
+	// assert.Equal(t, 8, res[3])
+	// assert.Equal(t, 5, res[4])
+	// assert.Equal(t, 3, res[5])
+	// assert.Equal(t, 6, res[6])
+	// assert.Equal(t, 7, res[7])
+}
