@@ -224,3 +224,31 @@ func FindFirstCommonNode(left *ListNode, right *ListNode) *ListNode {
 
 //从上到下按层打印二叉树，同一层结点从左至右输出。每一层输出一行。
 //{8,6,10,5,7,9,11}  [[8],[6,10],[5,7,9,11]]
+func (root *BinaryTreeNode) Print() [][]int {
+
+	// var res [][]int
+	res := make([][]int, 0, 100)
+
+	currentNodeList := []*BinaryTreeNode{root}
+	for len(currentNodeList) > 0 {
+		var nextNodeList []*BinaryTreeNode
+		var currentList []int
+
+		for _, node := range currentNodeList {
+			currentList = append(currentList, node.Val)
+			if node.LeftChild != nil {
+				nextNodeList = append(nextNodeList, node.LeftChild)
+			}
+			if node.RightChild != nil {
+				nextNodeList = append(nextNodeList, node.RightChild)
+			}
+		}
+		res = append(res, currentList)
+		currentList = currentList[0:0]
+
+		currentNodeList = nextNodeList
+		nextNodeList = nextNodeList[0:0]
+
+	}
+	return res
+}

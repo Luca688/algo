@@ -127,3 +127,19 @@ func TestFindFirstCommonNode(t *testing.T) {
 	res = FindFirstCommonNode(leftHead, rightHead)
 	assert.Equal(t, 3, res.Val)
 }
+
+func TestPrint(t *testing.T) {
+	testSlice := []int{8, 6, 10, 5, 7, 9, 11}
+	root := GeneralFullBinaryTree(testSlice)
+	res := root.Print()
+
+	assert.Equal(t, 8, res[0][0])
+
+	assert.Equal(t, 6, res[1][0])
+	assert.Equal(t, 10, res[1][1])
+
+	assert.Equal(t, 5, res[2][0])
+	assert.Equal(t, 7, res[2][1])
+	assert.Equal(t, 9, res[2][2])
+	assert.Equal(t, 11, res[2][3])
+}
