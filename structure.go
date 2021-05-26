@@ -352,3 +352,51 @@ func PrevOrderByRecursiveSub(node *BinaryTreeNode, res *[]int) {
 		return
 	}
 }
+
+//左根右
+// func (root *BinaryTreeNode) SequenceOrderByIteration() []int {
+// 	var res []int
+// 	var nodeList = make([]*BinaryTreeNode, 10)
+// 	nodeList[0] = root
+// 	var lastPopNode *BinaryTreeNode
+// 	for {
+// 		fmt.Println(res)
+// 		if len(nodeList) <= 0 {
+// 			break
+// 		}
+// 		var currentNodeList []*BinaryTreeNode
+// 		currentNode := nodeList[0]
+// 		nodeList = nodeList[1:]
+// 		fmt.Println("nodeList")
+// 		fmt.Println(nodeList)
+// 		//叶子节点
+// 		if currentNode.LeftChild == nil && currentNode.RightChild == nil {
+// 			res = append(res, currentNode.Val)
+// 			lastPopNode = currentNode
+// 			continue
+// 		}
+// 		//左节点已出或没有左节点-时出当前节点
+// 		if (currentNode.LeftChild != nil && currentNode.LeftChild == lastPopNode) || currentNode.LeftChild == nil {
+// 			res = append(res, currentNode.Val)
+// 			lastPopNode = currentNode
+// 			continue
+// 		}
+// 		//根节点出
+// 		if currentNode == root {
+// 			res = append(res, currentNode.Val)
+// 			lastPopNode = currentNode
+// 			continue
+// 		}
+
+// 		if currentNode.LeftChild != nil {
+// 			currentNodeList = append(currentNodeList, currentNode.LeftChild)
+// 		}
+// 		currentNodeList = append(currentNodeList, currentNode)
+// 		if currentNode.RightChild != nil {
+// 			currentNodeList = append(currentNodeList, currentNode.RightChild)
+// 		}
+// 		nodeList = append(currentNodeList, nodeList...)
+
+// 	}
+// 	return res
+// }
