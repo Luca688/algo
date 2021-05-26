@@ -1,4 +1,4 @@
-package main
+package algo
 
 //https://www.cnblogs.com/flmei/p/10768617.html
 
