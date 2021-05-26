@@ -4,6 +4,7 @@ package main
 
 import (
 	"errors"
+	"fmt"
 )
 
 type ListNode struct {
@@ -331,13 +332,16 @@ func (root *BinaryTreeNode) PrevOrderByIteration() []int {
 
 func (root *BinaryTreeNode) PrevOrderByRecursive() []int {
 	var res []int
-	PrevOrderByRecursiveSub(root, res)
+	// var res = make([]int, 10)
+	PrevOrderByRecursiveSub(root, &res)
 	return res
 }
-func PrevOrderByRecursiveSub(node *BinaryTreeNode, res []int) {
+func PrevOrderByRecursiveSub(node *BinaryTreeNode, res *[]int) {
 
 	if node != nil {
-		res = append(res, node.Val)
+
+		*res = append(*res, node.Val)
+		fmt.Println(res)
 		if node.LeftChild != nil {
 			PrevOrderByRecursiveSub(node.LeftChild, res)
 		}
