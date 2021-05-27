@@ -479,9 +479,19 @@ func (root *BinaryTreeNode) DeleteBSTreeVal(val int) (res bool, newRoot *BinaryT
 		} else {
 			//非根节点
 			if node.LeftChild == nil {
-
+				//被删除元素位于左子树
+				if parentNode.LeftChild == node {
+					parentNode.LeftChild = node.RightChild
+				} else {
+					parentNode.RightChild = node.RightChild
+				}
 			} else {
-				parentNode.LeftChild = node.LeftChild
+				//被删除的元素位于左子树
+				if parentNode.LeftChild == node {
+					parentNode.LeftChild = node.LeftChild
+				} else {
+
+				}
 			}
 		}
 
