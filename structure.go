@@ -400,3 +400,110 @@ func PrevOrderByRecursiveSub(node *BinaryTreeNode, res *[]int) {
 // 	}
 // 	return res
 // }
+
+func NewBSTree(data []int) *BinaryTreeNode {
+
+	if len(data) <= 0 {
+		return nil
+	}
+
+	root := NewBinaryTreeNode(data[0])
+	for i := 1; i < len(data); i++ {
+		root.InsertBSTreeNode(data[i])
+	}
+
+	return root
+}
+
+//1.左子树上的所有节点值均小于根节点值，2右子树上的所有节点值均不小于根节点值，3，左右子树也满足上述两个条件。
+func (root *BinaryTreeNode) InsertBSTreeNode(val int) bool {
+
+	hasVal, _ := root.SearchBSTreeVal(val)
+	if hasVal {
+		return true
+	}
+
+	currentNode := root
+	targetNode := root
+	for currentNode != nil {
+		targetNode = currentNode
+		if val > currentNode.Val {
+			currentNode = currentNode.RightChild
+		} else {
+			currentNode = currentNode.LeftChild
+		}
+	}
+
+	insertNode := NewBinaryTreeNode(val)
+	if targetNode.Val > val {
+		targetNode.LeftChild = insertNode
+	} else {
+		targetNode.RightChild = insertNode
+	}
+
+	return true
+}
+
+func (root *BinaryTreeNode) DeleteBSTreeVal(val int) (res bool, newRoot *BinaryTreeNode) {
+	newRoot = root
+
+	hasVal, node, parentNode := root.SearchBSTreeVal(val)
+	if !hasVal {
+		return false, nil
+	}
+	//叶子节点
+	if node.LeftChild == nil && node.RightChild == nil {
+
+		//只有一个节点的树
+		if node == root {
+			return true, nil
+
+		} else {
+			if parentNode.LeftChild == node {
+				parentNode.LeftChild = nil
+			} else {
+				parentNode.RightChild = nil
+			}
+			return true, newRoot
+		}
+	}
+	//单分支节点
+	if node.LeftChild == nil || node.RightChild == nil {
+		//根节点
+		if node == root {
+			if node.LeftChild == nil {
+				return true, node.RightChild
+			} else {
+				return true, node.LeftChild
+			}
+		} else {
+			//非根节点
+			if node.LeftChild == nil {
+
+			} else {
+				parentNode.LeftChild = node.LeftChild
+			}
+		}
+
+	}
+	return true, newRoot
+}
+func (root *BinaryTreeNode) SearchBSTreeVal(val int) (res bool, node *BinaryTreeNode, parentNode *BinaryTreeNode) {
+
+	var pNode *BinaryTreeNode
+	currentNode := root
+	for currentNode != nil {
+
+		if currentNode.Val == val {
+			return true, currentNode, pNode
+		} else {
+			pNode = currentNode
+			if currentNode.Val > val {
+				currentNode = currentNode.RightChild
+			} else {
+				currentNode = currentNode.LeftChild
+			}
+		}
+	}
+	return false, nil, nil
+}
