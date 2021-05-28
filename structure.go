@@ -418,7 +418,7 @@ func NewBSTree(data []int) *BinaryTreeNode {
 //1.左子树上的所有节点值均小于根节点值，2右子树上的所有节点值均不小于根节点值，3，左右子树也满足上述两个条件。
 func (root *BinaryTreeNode) InsertBSTreeNode(val int) bool {
 
-	hasVal, _ := root.SearchBSTreeVal(val)
+	hasVal, _, _ := root.SearchBSTreeVal(val)
 	if hasVal {
 		return true
 	}
@@ -447,10 +447,12 @@ func (root *BinaryTreeNode) InsertBSTreeNode(val int) bool {
 func (root *BinaryTreeNode) DeleteBSTreeVal(val int) (res bool, newRoot *BinaryTreeNode) {
 	newRoot = root
 
+	//无指定值得节点
 	hasVal, node, parentNode := root.SearchBSTreeVal(val)
 	if !hasVal {
-		return false, nil
+		return false, root
 	}
+
 	//叶子节点
 	if node.LeftChild == nil && node.RightChild == nil {
 
@@ -467,8 +469,10 @@ func (root *BinaryTreeNode) DeleteBSTreeVal(val int) (res bool, newRoot *BinaryT
 			return true, newRoot
 		}
 	}
+
 	//单分支节点
 	if node.LeftChild == nil || node.RightChild == nil {
+
 		//根节点
 		if node == root {
 			if node.LeftChild == nil {
@@ -476,28 +480,113 @@ func (root *BinaryTreeNode) DeleteBSTreeVal(val int) (res bool, newRoot *BinaryT
 			} else {
 				return true, node.LeftChild
 			}
-		} else {
-			//非根节点
-			if node.LeftChild == nil {
-				//被删除元素位于左子树
-				if parentNode.LeftChild == node {
-					parentNode.LeftChild = node.RightChild
-				} else {
-					parentNode.RightChild = node.RightChild
-				}
-			} else {
-				//被删除的元素位于左子树
-				if parentNode.LeftChild == node {
-					parentNode.LeftChild = node.LeftChild
-				} else {
+		}
 
-				}
+		//左子树位空的非根节点
+		if node.LeftChild == nil {
+
+			//被删除元素位于左子树
+			if parentNode.LeftChild == node {
+				parentNode.LeftChild = node.RightChild
+			} else {
+				parentNode.RightChild = node.RightChild
 			}
+
+			return true, newRoot
+		}
+		//右子树为空的非根节点
+		if node.RightChild == nil {
+
+			//被删除的元素位于左子树
+			if parentNode.LeftChild == node {
+
+				parentNode.LeftChild = node.LeftChild
+
+			} else {
+				parentNode.RightChild = node.LeftChild
+			}
+
+			return true, newRoot
+		}
+	}
+
+	//双分支节点
+	if node.LeftChild != nil && node.RightChild != nil {
+
+		//右子树的最小节点一定没有左节点
+		minNode, pNode := node.RightChild.SearchMinBSTreeVal()
+
+		//根节点
+		if node == root {
+			newRoot = minNode
+			newRoot.LeftChild = root.LeftChild
+			pNode.LeftChild = newRoot.RightChild
+			newRoot.RightChild = root.RightChild
+			return true, newRoot
+		}
+
+		//非根节点
+		if node != root {
+
+			minNode.LeftChild = node.LeftChild
+			if pNode != nil {
+
+				pNode.LeftChild = minNode.RightChild
+			}
+
+			if parentNode.RightChild == node {
+
+				parentNode.RightChild = minNode
+			}
+
+			if parentNode.LeftChild == node {
+
+				parentNode.LeftChild = minNode
+			}
+			return true, newRoot
 		}
 
 	}
+
 	return true, newRoot
 }
+
+func (root *BinaryTreeNode) SearchMaxBSTreeVal() (node *BinaryTreeNode, parent *BinaryTreeNode) {
+
+	var pNode *BinaryTreeNode
+
+	currentNode := root
+
+	for {
+
+		if currentNode.RightChild == nil {
+			return currentNode, pNode
+		}
+
+		pNode = currentNode
+		currentNode = currentNode.RightChild
+
+	}
+}
+
+func (root *BinaryTreeNode) SearchMinBSTreeVal() (node *BinaryTreeNode, parent *BinaryTreeNode) {
+
+	var pNode *BinaryTreeNode
+
+	currentNode := root
+
+	for {
+
+		if currentNode.LeftChild == nil {
+			return currentNode, pNode
+		}
+
+		pNode = currentNode
+		currentNode = currentNode.LeftChild
+
+	}
+}
+
 func (root *BinaryTreeNode) SearchBSTreeVal(val int) (res bool, node *BinaryTreeNode, parentNode *BinaryTreeNode) {
 
 	var pNode *BinaryTreeNode
@@ -508,7 +597,7 @@ func (root *BinaryTreeNode) SearchBSTreeVal(val int) (res bool, node *BinaryTree
 			return true, currentNode, pNode
 		} else {
 			pNode = currentNode
-			if currentNode.Val > val {
+			if val > currentNode.Val {
 				currentNode = currentNode.RightChild
 			} else {
 				currentNode = currentNode.LeftChild

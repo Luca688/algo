@@ -273,3 +273,190 @@ func TestPrevOrderByRecursive(t *testing.T) {
 // 	assert.Equal(t, 3, res[6])
 // 	assert.Equal(t, 7, res[7])
 // }
+
+func TestNewBSTree(t *testing.T) {
+	/**
+			15
+		5        17
+	  3   12    16  20
+	1   4
+		**/
+	testSlice := []int{15, 5, 17, 3, 12, 16, 20, 1, 4}
+	root := NewBSTree(testSlice)
+
+	assert.Equal(t, 15, root.Val)
+
+	assert.Equal(t, 5, root.LeftChild.Val)
+	assert.Equal(t, 17, root.RightChild.Val)
+
+	assert.Equal(t, 3, root.LeftChild.LeftChild.Val)
+	assert.Equal(t, 12, root.LeftChild.RightChild.Val)
+	assert.Equal(t, 16, root.RightChild.LeftChild.Val)
+	assert.Equal(t, 20, root.RightChild.RightChild.Val)
+
+	assert.Equal(t, 1, root.LeftChild.LeftChild.LeftChild.Val)
+	assert.Equal(t, 4, root.LeftChild.LeftChild.RightChild.Val)
+}
+
+func TestSearchBSTreeVal(t *testing.T) {
+	/**
+			15
+		5        17
+	  3   12    16  20
+	1   4
+		**/
+	testSlice := []int{15, 5, 17, 3, 12, 16, 20, 1, 4}
+	root := NewBSTree(testSlice)
+
+	hasVal, _, _ := root.SearchBSTreeVal(15)
+	assert.Equal(t, true, hasVal)
+
+	hasVal, _, _ = root.SearchBSTreeVal(4)
+	assert.Equal(t, true, hasVal)
+
+	hasVal, _, _ = root.SearchBSTreeVal(3)
+	assert.Equal(t, true, hasVal)
+
+	hasVal, _, _ = root.SearchBSTreeVal(17)
+	assert.Equal(t, true, hasVal)
+
+	hasVal, _, _ = root.SearchBSTreeVal(12)
+	assert.Equal(t, true, hasVal)
+
+	hasVal, _, _ = root.SearchBSTreeVal(-999)
+	assert.Equal(t, false, hasVal)
+}
+
+func TestSearchMaxBSTreeVal(t *testing.T) {
+	/**
+			15
+		5        17
+	  3   12    16  20
+	1   4
+		**/
+	testSlice := []int{15, 5, 17, 3, 12, 16, 20, 1, 4}
+	root := NewBSTree(testSlice)
+
+	node, _ := root.SearchMaxBSTreeVal()
+	assert.Equal(t, 20, node.Val)
+}
+
+func TestDeleteBSTreeVal(t *testing.T) {
+
+	//叶子节点
+	testSlice := []int{15, 5, 3, 1}
+	root := NewBSTree(testSlice)
+	res, newRoot := root.DeleteBSTreeVal(1)
+	assert.Equal(t, true, res)
+	assert.Equal(t, true, newRoot == root)
+
+	//无指定值得节点
+	testSlice = []int{15, 5, 3, 1}
+	root = NewBSTree(testSlice)
+	res, newRoot = root.DeleteBSTreeVal(666)
+	assert.Equal(t, false, res)
+	assert.Equal(t, true, newRoot == root)
+
+	//只有一个节点的树
+	testSlice = []int{15}
+	root = NewBSTree(testSlice)
+	res, newRoot = root.DeleteBSTreeVal(15)
+	assert.Equal(t, true, res)
+	assert.Equal(t, true, newRoot == nil)
+
+	//叶子节点
+	testSlice = []int{15, 5, 17}
+	root = NewBSTree(testSlice)
+	res, newRoot = root.DeleteBSTreeVal(5)
+	assert.Equal(t, true, res)
+	assert.Equal(t, true, newRoot.LeftChild == nil)
+	assert.Equal(t, true, newRoot == root)
+	res, newRoot = root.DeleteBSTreeVal(17)
+	assert.Equal(t, true, res)
+	assert.Equal(t, true, newRoot.RightChild == nil)
+
+	//单分支节点
+
+	//左斜树根节点
+	testSlice = []int{15, 5, 3, 1}
+	root = NewBSTree(testSlice)
+	res, newRoot = root.DeleteBSTreeVal(15)
+	assert.Equal(t, true, res)
+	assert.Equal(t, true, root.LeftChild == newRoot)
+	assert.Equal(t, true, newRoot != root)
+
+	//左斜树非根节点
+	testSlice = []int{15, 5, 3, 1}
+	root = NewBSTree(testSlice)
+	res, newRoot = root.DeleteBSTreeVal(3)
+	assert.Equal(t, true, res)
+	assert.Equal(t, true, newRoot == root)
+	assert.Equal(t, 1, newRoot.LeftChild.LeftChild.Val)
+
+	//右斜树根节点
+	testSlice = []int{15, 17, 20}
+	root = NewBSTree(testSlice)
+	res, newRoot = root.DeleteBSTreeVal(15)
+	assert.Equal(t, true, res)
+	assert.Equal(t, true, root.RightChild == newRoot)
+	assert.Equal(t, true, newRoot != root)
+
+	//右斜树非根节点
+	testSlice = []int{15, 17, 20}
+	root = NewBSTree(testSlice)
+	res, newRoot = root.DeleteBSTreeVal(17)
+	assert.Equal(t, true, res)
+	assert.Equal(t, true, newRoot == root)
+	assert.Equal(t, 20, newRoot.RightChild.Val)
+
+	testSlice = []int{15, 17, 20, 18}
+	root = NewBSTree(testSlice)
+	res, newRoot = root.DeleteBSTreeVal(20)
+	assert.Equal(t, true, res)
+	assert.Equal(t, true, newRoot == root)
+	assert.Equal(t, 18, newRoot.RightChild.RightChild.Val)
+
+	//双节点
+	/**
+			15
+		5        17
+	  3   12    16  20
+	1   4
+	  2
+		**/
+
+	//非根节点左子树
+	testSlice = []int{17, 14, 13, 15, 16}
+	root = NewBSTree(testSlice)
+	res, newRoot = root.DeleteBSTreeVal(14)
+	assert.Equal(t, true, res)
+	assert.Equal(t, 17, newRoot.Val)
+	assert.Equal(t, 15, newRoot.LeftChild.Val)
+	assert.Equal(t, 13, newRoot.LeftChild.LeftChild.Val)
+	assert.Equal(t, 16, newRoot.LeftChild.RightChild.Val)
+
+	//非根节点又子树
+	testSlice = []int{15, 5, 17, 3, 12, 16, 20, 1, 4, 2}
+	root = NewBSTree(testSlice)
+	res, newRoot = root.DeleteBSTreeVal(17)
+	assert.Equal(t, true, res)
+	assert.Equal(t, 15, newRoot.Val)
+	assert.Equal(t, 20, newRoot.RightChild.Val)
+	assert.Equal(t, 16, newRoot.RightChild.LeftChild.Val)
+	assert.Equal(t, 5, newRoot.LeftChild.Val)
+	assert.Equal(t, 3, newRoot.LeftChild.LeftChild.Val)
+	assert.Equal(t, 12, newRoot.LeftChild.RightChild.Val)
+
+	//根节点
+	testSlice = []int{15, 5, 17, 3, 12, 16, 20, 1, 4, 2}
+	root = NewBSTree(testSlice)
+	res, newRoot = root.DeleteBSTreeVal(15)
+	assert.Equal(t, true, res)
+	assert.Equal(t, 16, newRoot.Val)
+	assert.Equal(t, 17, newRoot.RightChild.Val)
+	assert.Equal(t, 20, newRoot.RightChild.RightChild.Val)
+	assert.Equal(t, 5, newRoot.LeftChild.Val)
+	assert.Equal(t, 3, newRoot.LeftChild.LeftChild.Val)
+	assert.Equal(t, 12, newRoot.LeftChild.RightChild.Val)
+
+}
