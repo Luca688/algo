@@ -255,7 +255,13 @@ func (root *BinaryTreeNode) Print() [][]int {
 
 //给定一棵二叉搜索树，请找出其中的第k小的TreeNode结点。
 //输入：{5,3,7,2,4,6,8},3 返回值：{4}
+func KthNode(root *BinaryTreeNode, k int) *BinaryTreeNode {
 
-// func KthNode(pRoot *TreeNode, k int) *TreeNode {
-// 	// write code here
-// }
+	_, nodeList := root.InOrderByRecursive()
+
+	if k > len(nodeList) {
+		return nil
+	}
+
+	return nodeList[k-1]
+}

@@ -143,3 +143,11 @@ func TestPrint(t *testing.T) {
 	assert.Equal(t, 9, res[2][2])
 	assert.Equal(t, 11, res[2][3])
 }
+
+func TestKthNode(t *testing.T) {
+	testSlice := []int{5, 3, 7, 2, 4, 6, 8}
+	bst := NewBSTree(testSlice)
+
+	node := KthNode(bst, 3)
+	assert.Equal(t, 4, node.Val)
+}
