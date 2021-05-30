@@ -473,7 +473,7 @@ func TestInOrderByRecursive(t *testing.T) {
 	//非根节点左子树
 	testSlice := []int{15, 5, 17, 3, 12, 16, 20, 1, 4, 2}
 	root := NewBSTree(testSlice)
-	res := root.InOrderByRecursive()
+	res, _ := root.InOrderByRecursive()
 	resSlice := []int{1, 2, 3, 4, 5, 12, 15, 16, 17, 20}
 	assert.Equal(t, resSlice, res)
 }

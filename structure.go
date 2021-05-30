@@ -608,18 +608,20 @@ func (root *BinaryTreeNode) SearchBSTreeVal(val int) (res bool, node *BinaryTree
 }
 
 //递归中序遍历-左根右
-func (root *BinaryTreeNode) InOrderByRecursive() []int {
+func (root *BinaryTreeNode) InOrderByRecursive() (slice []int, nodeList []*BinaryTreeNode) {
 	var res []int
-	root.InOrderByRecursiveSub(root, &res)
-	return res
+	var resNodeList []*BinaryTreeNode
+	root.InOrderByRecursiveSub(root, &res, &resNodeList)
+	return res, resNodeList
 }
 
-func (root *BinaryTreeNode) InOrderByRecursiveSub(node *BinaryTreeNode, res *[]int) {
+func (root *BinaryTreeNode) InOrderByRecursiveSub(node *BinaryTreeNode, res *[]int, resNodeList *[]*BinaryTreeNode) {
 	if node.LeftChild != nil {
-		root.InOrderByRecursiveSub(node.LeftChild, res)
+		root.InOrderByRecursiveSub(node.LeftChild, res, resNodeList)
 	}
 	*res = append(*res, node.Val)
+	*resNodeList = append(*resNodeList, node)
 	if node.RightChild != nil {
-		root.InOrderByRecursiveSub(node.RightChild, res)
+		root.InOrderByRecursiveSub(node.RightChild, res, resNodeList)
 	}
 }
