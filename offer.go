@@ -2,6 +2,7 @@ package algo
 
 import (
 	"errors"
+	"math"
 )
 
 //二维数组中的查找
@@ -18,7 +19,67 @@ import (
 **/
 func Find(target int, array [][]int) bool {
 
-	return false
+	//空数组
+	if len(array) == 0 {
+		return false
+	}
+	//只有一行
+	if len(array) == 1 {
+		res, _ := BinarySearch(array[0], target)
+		return res
+	}
+
+	columnLength, columnMax := len(array), len(array)-1
+
+	rowMax := len(array[0]) - 1
+
+	//小于最小或大于最大元素
+	if target < array[0][0] || target > array[columnMax][rowMax] {
+		return false
+	}
+	//等于最大最小元素
+	if target == array[0][0] || target == array[columnMax][rowMax] {
+		return true
+	}
+
+	//第一列切片
+	var column []int
+	for i := 0; i < columnLength; i++ {
+		column = append(column, array[i][0])
+	}
+
+	//行
+	min := 0
+	max := columnMax
+	var targetRow []int
+
+	for {
+		if target == column[min] || target == column[max] {
+			return true
+		}
+
+		//无法确定最后两行哪个大
+		if max-min == 1 {
+			for k, v := range array[min] {
+				targetRow = append(targetRow, v)
+				targetRow = append(targetRow, array[max][k])
+			}
+
+			break
+		}
+
+		mid := int(math.Floor(float64((max + min) / 2)))
+		if target >= column[mid] {
+			min = mid
+		} else {
+			max = mid
+		}
+	}
+
+	//行查找
+	res, _ := BinarySearch(targetRow, target)
+
+	return res
 }
 
 //删除链表中重复的节点

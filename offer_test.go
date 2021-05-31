@@ -6,6 +6,42 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+func TestFind(t *testing.T) {
+	testSlice := [][]int{
+		{1, 2, 8, 9},
+	}
+
+	res := Find(1, testSlice)
+	assert.Equal(t, true, res)
+	res = Find(8, testSlice)
+	assert.Equal(t, true, res)
+	res = Find(10, testSlice)
+	assert.Equal(t, false, res)
+
+	testSlice = [][]int{
+		{1, 2, 8, 9},
+		{2, 4, 9, 12},
+		{4, 7, 10, 13},
+		{6, 8, 11, 15},
+	}
+	res = Find(1, testSlice)
+	assert.Equal(t, true, res)
+
+	res = Find(0, testSlice)
+	assert.Equal(t, false, res)
+
+	res = Find(17, testSlice)
+	assert.Equal(t, false, res)
+
+	res = Find(10, testSlice)
+	assert.Equal(t, true, res)
+	res = Find(8, testSlice)
+	assert.Equal(t, true, res)
+	res = Find(6, testSlice)
+	assert.Equal(t, true, res)
+
+}
+
 func TestSortLinkListRepeat(t *testing.T) {
 
 	testHeadRepeat := []int{1, 1, 1, 1, 1, 2, 3, 3, 3, 4, 4, 5, 6}
