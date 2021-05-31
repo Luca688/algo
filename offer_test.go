@@ -6,6 +6,13 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+func TestReplaceSpace(t *testing.T) {
+	test := "We Are Happy"
+
+	res := ReplaceSpace(test)
+	assert.Equal(t, "We%20Are%20Happy", res)
+}
+
 func TestFind(t *testing.T) {
 	testSlice := [][]int{
 		{1, 2, 8, 9},
