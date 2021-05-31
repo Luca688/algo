@@ -6,6 +6,28 @@ import (
 	"strings"
 )
 
+//从尾到头打印链表
+//输入一个链表，按链表从尾到头的顺序返回一个ArrayList。
+//{67,0,24,58}
+//[58,24,0,67]
+
+func PrintListFromTailToHead(head *ListNode) []int {
+	var res []int
+
+	if head == nil {
+		return res
+	}
+	currentNode := head
+	for currentNode != nil {
+		tmp := []int{currentNode.Val}
+		res = append(tmp, res...)
+		currentNode = currentNode.Next
+	}
+
+	return res
+}
+
+//替换空格
 //请实现一个函数，将一个字符串中的每个空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。
 func ReplaceSpace(s string) string {
 

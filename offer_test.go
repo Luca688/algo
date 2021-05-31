@@ -6,6 +6,16 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+//从尾到头打印链表
+func TestPrintListFromTailToHead(t *testing.T) {
+	testSlice := []int{67, 0, 24, 58}
+	root := GeneralLinkList(testSlice)
+	res := PrintListFromTailToHead(root)
+	expectedSlice := []int{58, 24, 0, 67}
+	assert.Equal(t, expectedSlice, res)
+}
+
+//替换空格
 func TestReplaceSpace(t *testing.T) {
 	test := "We Are Happy"
 
