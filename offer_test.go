@@ -6,6 +6,22 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+func TestPop(t *testing.T) {
+	testSlice := []int{1, 2, 3, 4, 5}
+	Push(testSlice[0])
+	Push(testSlice[1])
+	Push(testSlice[2])
+	Push(testSlice[3])
+	Push(testSlice[4])
+
+	assert.Equal(t, 1, Pop())
+	assert.Equal(t, 2, Pop())
+	assert.Equal(t, 3, Pop())
+	assert.Equal(t, 4, Pop())
+	assert.Equal(t, 5, Pop())
+
+}
+
 func TestReConstructBinaryTree(t *testing.T) {
 
 	// pre := []int{1, 2, 3, 4, 5, 6, 7}

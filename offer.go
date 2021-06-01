@@ -2,10 +2,34 @@ package algo
 
 import (
 	"errors"
-	"fmt"
 	"math"
 	"strings"
 )
+
+var stack1 []int //push
+var stack2 []int //pop
+
+//用两个栈实现队列
+//用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。
+func Push(node int) {
+	stack1 = append([]int{node}, stack1...)
+}
+
+func Pop() int {
+
+	for _, v := range stack1 {
+		stack2 = append([]int{v}, stack2...)
+	}
+	stack1 = []int{}
+	if len(stack2) > 0 {
+		tmp := stack2[0]
+		stack2 = stack2[1:]
+		return tmp
+	} else {
+		return -999
+	}
+
+}
 
 //输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。
 //例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}，则重建二叉树并返回。
@@ -34,79 +58,6 @@ func findMiddle(arr []int, val int) int {
 	}
 
 	return index
-}
-
-func ReConstructBinaryTreeSub(pre []int, preStart *int, preEnd int, vin []int, root *BinaryTreeNode, parentNode *BinaryTreeNode, isLeft string) {
-	if *preStart > preEnd {
-		return
-	}
-
-	if len(vin) <= 0 {
-		return
-	}
-
-	midValue := pre[*preStart]
-
-	//当前操作节点
-	midNode := NewBinaryTreeNode(midValue)
-	midNode.LeftChild = nil
-	midNode.RightChild = nil
-
-	if root == nil {
-		root = midNode
-	}
-
-	if isLeft == "left" {
-		parentNode.LeftChild = midNode
-	}
-
-	if isLeft == "right" {
-		parentNode.RightChild = midNode
-	}
-
-	// midIndex := 0
-	fmt.Println("---")
-	fmt.Printf("mid %+v", midNode)
-	fmt.Print("mid-addr", &midNode)
-	fmt.Println("-")
-	fmt.Printf("pid %+v", parentNode)
-	fmt.Println("pid", &parentNode)
-	fmt.Println("---")
-
-	var i = 0
-	for i = 0; i < len(vin); i++ {
-		if vin[i] == midValue {
-			// midIndex = i
-			break
-		}
-	}
-	*preStart++
-
-	if parentNode == nil {
-		parentNode = root
-	} else {
-		parentNode = midNode
-	}
-	if len(vin) > i {
-
-		left := vin[0:i]
-		// fmt.Println("left")
-		// fmt.Println(left)
-		if len(left) > 0 {
-			ReConstructBinaryTreeSub(pre, preStart, preEnd, left, root, midNode, "left")
-		}
-	}
-
-	if len(vin)-i > 1 {
-		right := vin[i+1:]
-		// fmt.Println("right")
-		// fmt.Println(right)
-		if len(right) > 0 {
-			ReConstructBinaryTreeSub(pre, preStart, preEnd, right, root, midNode, "right")
-		}
-	}
-
-	// return
 }
 
 //从尾到头打印链表
