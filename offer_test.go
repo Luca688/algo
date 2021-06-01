@@ -6,6 +6,16 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+func TestReConstructBinaryTree(t *testing.T) {
+
+	// pre := []int{1, 2, 3, 4, 5, 6, 7}
+	// vin := []int{3, 2, 4, 1, 6, 5, 7}
+	pre := []int{1, 2, 4, 7, 3, 5, 6, 8}
+	vin := []int{4, 7, 2, 1, 5, 3, 8, 6}
+	res := ReConstructBinaryTree(pre, vin)
+	assert.Equal(t, 1, res.Val)
+}
+
 //从尾到头打印链表
 func TestPrintListFromTailToHead(t *testing.T) {
 	testSlice := []int{67, 0, 24, 58}
