@@ -6,6 +6,20 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+func TestFibonacci(t *testing.T) {
+	res := Fibonacci(1)
+	assert.Equal(t, 0, res)
+
+	res = Fibonacci(2)
+	assert.Equal(t, 1, res)
+
+	res = Fibonacci(3)
+	assert.Equal(t, 1, res)
+
+	res = Fibonacci(8)
+	assert.Equal(t, 13, res)
+}
+
 func TestPop(t *testing.T) {
 	testSlice := []int{1, 2, 3, 4, 5}
 	Push(testSlice[0])
