@@ -6,6 +6,20 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+func TestJumpFloor(t *testing.T) {
+	res := JumpFloor(1)
+	assert.Equal(t, 1, res)
+
+	res = JumpFloor(2)
+	assert.Equal(t, 2, res)
+
+	res = JumpFloor(3)
+	assert.Equal(t, 3, res)
+
+	res = JumpFloor(6)
+	assert.Equal(t, 13, res)
+}
+
 func TestFibonacci(t *testing.T) {
 	res := Fibonacci(1)
 	assert.Equal(t, 0, res)
