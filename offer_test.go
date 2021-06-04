@@ -6,6 +6,14 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+func TestReOrderArray(t *testing.T) {
+
+	testSlice := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+	res := ReOrderArray(testSlice)
+	expectRes := []int{1, 3, 5, 7, 9, 2, 4, 6, 8, 10}
+	assert.Equal(t, expectRes, res)
+}
+
 func TestPowr(t *testing.T) {
 
 	res := Power(2.0, 3)

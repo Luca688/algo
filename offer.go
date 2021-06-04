@@ -6,6 +6,73 @@ import (
 	"strings"
 )
 
+//调整数组顺序使奇数位于偶数前面
+//输入一个整数数组，实现一个函数来调整该数组中数字的顺序，使得所有的奇数位于数组的前半部分，所有的偶数位于数组的后半部分，
+//并保证奇数和奇数，偶数和偶数之间的相对位置不变。
+//输入：[1,2,3,4]复制返回值：[1,3,2,4]
+//输入：[2,4,6,5,7]复制返回值：[5,7,2,4,6]
+func ReOrderArray(array []int) []int {
+
+	var even, odd, res []int
+
+	for _, v := range array {
+		if v%2 == 0 {
+			even = append(even, v)
+		} else {
+			odd = append(odd, v)
+		}
+	}
+
+	res = append(odd, even...)
+	return res
+}
+
+// func ReOrderArrayRecursive(index int, array *[]int) {
+
+// 	nextIndex := index + 1
+// 	if nextIndex >= len(*array) {
+// 		return
+// 	}
+
+// 	target := (*array)[index]
+// 	isEven := true
+// 	if target%2 != 0 {
+// 		isEven = false
+// 	}
+
+// 	nextValue := (*array)[index+1]
+// 	nextIsEven := true
+// 	if nextValue%2 != 0 {
+// 		nextIsEven = false
+// 	}
+
+// 	if nextIsEven == isEven {
+// 		ReOrderArrayRecursive(nextIndex, array)
+// 	} else {
+// 		firstIndex := 0
+// 		for i := nextIndex + 1; i < len(*array); i++ {
+// 			firstValue := (*array)[i]
+// 			firstIsEven := true
+// 			if firstValue%2 != 0 {
+// 				firstIsEven = false
+// 			}
+// 			//第一个同为奇数或者偶数的数
+// 			if firstIsEven == isEven {
+// 				firstIndex = i
+// 				break
+// 			}
+// 		}
+// 		if firstIndex > 0 {
+// 			tmp := nextValue
+// 			(*array)[nextIndex] = (*array)[firstIndex]
+// 			(*array)[firstIndex] = tmp
+// 			ReOrderArrayRecursive(nextIndex, array)
+// 		} else {
+// 			return
+// 		}
+// 	}
+// }
+
 //数值的整数次方
 //给定一个double类型的浮点数base和int类型的整数exponent。求base的exponent次方。
 //保证base和exponent不同时为0。不得使用库函数，同时不需要考虑大数问题，也不用考虑小数点后面0的位数。
