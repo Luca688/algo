@@ -6,6 +6,14 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+func TestJumpFloorII(t *testing.T) {
+	res := jumpFloorII(1)
+	assert.Equal(t, 1, res)
+
+	res = jumpFloorII(4)
+	assert.Equal(t, 8, res)
+}
+
 func TestJumpFloor(t *testing.T) {
 	res := JumpFloor(1)
 	assert.Equal(t, 1, res)
