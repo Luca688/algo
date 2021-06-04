@@ -6,6 +6,35 @@ import (
 	"strings"
 )
 
+//数值的整数次方
+//给定一个double类型的浮点数base和int类型的整数exponent。求base的exponent次方。
+//保证base和exponent不同时为0。不得使用库函数，同时不需要考虑大数问题，也不用考虑小数点后面0的位数。
+func Power(base float64, exponent int) float64 {
+	if exponent == 0 {
+		return 1.0
+	}
+
+	res := base
+
+	isNegative := false
+	if exponent < 0 {
+		exponent = exponent * -1
+		isNegative = true
+	}
+	if exponent > 0 {
+		for i := 1; i < exponent; i++ {
+			res *= base
+		}
+	}
+	if isNegative {
+		res = 1 / res
+	}
+
+	return res
+}
+
+//二进制中1的个数 todo
+
 //跳台阶扩展问题
 //一只青蛙一次可以跳上1级台阶，也可以跳上2级……它也可以跳上n级。求该青蛙跳上一个n级的台阶总共有多少种跳法。
 func jumpFloorII(number int) int {

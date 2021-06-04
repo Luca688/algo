@@ -6,6 +6,18 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+func TestPowr(t *testing.T) {
+
+	res := Power(2.0, 3)
+	assert.Equal(t, 8.0, res)
+
+	res = Power(2.1, 3)
+	assert.Equal(t, 9.261000000000001, res)
+
+	res = Power(2.0, -2)
+	assert.Equal(t, 0.250, res)
+}
+
 func TestJumpFloorII(t *testing.T) {
 	res := jumpFloorII(1)
 	assert.Equal(t, 1, res)
