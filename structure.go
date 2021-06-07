@@ -646,3 +646,35 @@ func (root *BinaryTreeNode) PreOrderByRecursiveSub(node *BinaryTreeNode, res *[]
 		root.PreOrderByRecursiveSub(node.RightChild, res, resNodeList)
 	}
 }
+
+//前序遍历-中左右
+func (root *BinaryTreeNode) PrevOrder() (resList []int, resNodeList []*BinaryTreeNode) {
+	var list []int
+	var nodeList []*BinaryTreeNode
+
+	if root == nil {
+		return list, nodeList
+	}
+
+	currentNode := root
+	var nextNodeList []*BinaryTreeNode
+
+	for currentNode != nil {
+		list = append(list, currentNode.Val)
+		nodeList = append(nodeList, currentNode)
+		if currentNode.RightChild != nil {
+			nextNodeList = append([]*BinaryTreeNode{currentNode.RightChild}, nextNodeList...)
+		}
+		if currentNode.LeftChild != nil {
+			nextNodeList = append([]*BinaryTreeNode{currentNode.LeftChild}, nextNodeList...)
+		}
+		if len(nextNodeList) > 0 {
+			currentNode = nextNodeList[0]
+			nextNodeList = nextNodeList[1:]
+		} else {
+			break
+		}
+	}
+
+	return list, nodeList
+}
