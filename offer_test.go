@@ -6,6 +6,17 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+func TestMirror(t *testing.T) {
+
+	testSlice := []int{8, 6, 10, 5, 7, 9, 11}
+	root := NewBSTree(testSlice)
+	mirror := Mirror(root)
+	level := mirror.LevelOrder()
+	expected := []int{8, 10, 6, 11, 9, 7, 5}
+	assert.Equal(t, expected, level)
+
+}
+
 func TestHasSubtree(t *testing.T) {
 
 	pSlice := []int{5, 3, 7, 1, 4, 6, 8, 0, 2, 9}

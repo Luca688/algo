@@ -6,6 +6,34 @@ import (
 	"strings"
 )
 
+//二叉树的镜像
+//操作给定的二叉树，将其变换为源二叉树的镜像。
+//{8,6,10,5,7,9,11} {8,10,6,11,9,7,5}
+
+func Mirror(root *BinaryTreeNode) *BinaryTreeNode {
+	if root == nil {
+		return nil
+	}
+
+	if root.LeftChild == nil && root.RightChild == nil {
+		return root
+	}
+
+	tmp := root.RightChild
+	root.RightChild = root.LeftChild
+	root.LeftChild = tmp
+
+	if root.LeftChild != nil {
+		Mirror(root.LeftChild)
+	}
+
+	if root.RightChild != nil {
+		Mirror(root.RightChild)
+	}
+
+	return root
+}
+
 //树的子结构
 //输入两棵二叉树A，B，判断B是不是A的子结构。（ps：我们约定空树不是任意一个树的子结构）
 //{8,8,#,9,#,2,#,5},{8,9,#,2} true
