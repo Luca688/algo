@@ -21,11 +21,45 @@ func HasSubtree(pRoot *BinaryTreeNode, cRoot *BinaryTreeNode) bool {
 		return true
 	}
 
-	pCurrentNode := pRoot
-	for pCurrentNode != nil {
+	_, pNodeList := pRoot.PrevOrder()
 
-		if pCurrentNode.Val == cRoot.Val {
+	for _, val := range pNodeList {
+		if val.Val == cRoot.Val {
+			issub := isSub(pRoot, cRoot)
+			if issub {
+				return true
+			} else {
+				continue
+			}
+		}
+	}
+
+	return false
+}
+
+func isSub(pRoot *BinaryTreeNode, cRoot *BinaryTreeNode) bool {
+
+	if pRoot.Val != cRoot.Val {
+		return false
+	}
+
+	if cRoot.LeftChild == nil && cRoot.RightChild == nil && pRoot.LeftChild == nil && pRoot.RightChild == nil && pRoot.Val == cRoot.Val {
+		return true
+	}
+
+	if cRoot.LeftChild != nil {
+		if pRoot.LeftChild == nil {
+			return false
 		} else {
+			return isSub(pRoot.LeftChild, cRoot.LeftChild)
+		}
+	}
+
+	if cRoot.RightChild != nil {
+		if pRoot.RightChild == nil {
+			return false
+		} else {
+			return isSub(pRoot.RightChild, cRoot.RightChild)
 		}
 	}
 

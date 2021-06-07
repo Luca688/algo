@@ -6,6 +6,34 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+func TestHasSubtree(t *testing.T) {
+
+	pSlice := []int{5, 3, 7, 1, 4, 6, 8, 0, 2, 9}
+	pRoot := NewBSTree(pSlice)
+	cSlice := []int{5, 3, 7, 1, 4, 6, 8, 0, 2, 9}
+	cRoot := NewBSTree(cSlice)
+	assert.Equal(t, true, HasSubtree(pRoot, cRoot))
+
+	pSlice = []int{5, 3, 7, 1, 4, 6, 8, 0, 2, 9}
+	pRoot = NewBSTree(pSlice)
+	cSlice = []int{5}
+	cRoot = NewBSTree(cSlice)
+	assert.Equal(t, false, HasSubtree(pRoot, cRoot))
+
+	pSlice = []int{5, 3, 7, 1, 4, 6, 8, 0, 2, 9}
+	pRoot = NewBSTree(pSlice)
+	cSlice = []int{3, 1, 4, 2}
+	cRoot = NewBSTree(cSlice)
+	assert.Equal(t, false, HasSubtree(pRoot, cRoot))
+
+	pSlice = []int{5, 3, 7, 1, 4, 6, 8, 0, 2, 9}
+	pRoot = NewBSTree(pSlice)
+	cSlice = []int{3, 1, 4, 0, 2}
+	cRoot = NewBSTree(cSlice)
+	assert.Equal(t, false, HasSubtree(pRoot, cRoot))
+
+}
+
 func TestReOrderArray(t *testing.T) {
 
 	testSlice := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
