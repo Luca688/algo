@@ -28,6 +28,34 @@ func IsPopOrder(pushV []int, popV []int) bool {
 		return len(pushV) == len(popV)
 	}
 
+	var stack []int
+	stack = append([]int{pushV[0]}, stack...)
+	pushV = pushV[1:]
+
+	index := 0
+	node := popV[0]
+
+	for {
+		if node == stack[0] {
+			stack = stack[1:]
+			if index < len(popV)-1 {
+				index++
+				node = popV[index]
+			} else {
+				break
+			}
+
+		} else {
+			if len(pushV) > 0 {
+				stack = append([]int{pushV[0]}, stack...)
+				pushV = pushV[1:]
+			} else {
+				return false
+			}
+
+		}
+	}
+
 	return true
 }
 

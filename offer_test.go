@@ -6,6 +6,22 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+func TestIsPopOrder(t *testing.T) {
+
+	pushV := []int{1, 2, 3, 4, 5}
+	popV := []int{4, 5, 3, 2, 1}
+	res := IsPopOrder(pushV, popV)
+	assert.Equal(t, true, res)
+
+	popV = []int{4, 3, 5, 1, 2}
+	res = IsPopOrder(pushV, popV)
+	assert.Equal(t, false, res)
+
+	popV = []int{5, 4, 3, 2, 1}
+	res = IsPopOrder(pushV, popV)
+	assert.Equal(t, true, res)
+}
+
 func TestPrintFromTopToBottom(t *testing.T) {
 	assert.Equal(t, true, true)
 }
