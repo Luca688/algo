@@ -6,6 +6,10 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+func TestPrintFromTopToBottom(t *testing.T) {
+	assert.Equal(t, true, true)
+}
+
 func TestPrintMatrix(t *testing.T) {
 
 	//剩余1个元素
