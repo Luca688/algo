@@ -8,18 +8,55 @@ import (
 
 func TestPrintMatrix(t *testing.T) {
 
+	//剩余1个元素
 	testSlice := [][]int{
 		{1, 1, 1, 1, 1, 1, 1},
-		{13, 21, 21, 21, 21, 21, 11},
-		{13, 2, 3, 3, 3, 22, 11},
-		{13, 2, 3, 4, 3, 22, 11},
-		{13, 2, 3, 3, 3, 22, 11},
-		{13, 2, 2, 2, 2, 22, 11},
-		{12, 12, 12, 12, 12, 12, 11},
+		{1, 2, 2, 2, 2, 2, 1},
+		{1, 2, 3, 3, 3, 2, 1},
+		{1, 2, 3, 4, 3, 2, 1},
+		{1, 2, 3, 3, 3, 2, 1},
+		{1, 2, 2, 2, 2, 2, 1},
+		{1, 1, 1, 1, 1, 1, 1},
 	}
 	res := PrintMatrix(testSlice)
 	t.Log(res)
+	assert.Equal(t, true, true)
 
+	//剩余0
+	testSlice = [][]int{
+		{1, 1},
+		{1, 1},
+	}
+	res = PrintMatrix(testSlice)
+	assert.Equal(t, []int{1, 1, 1, 1}, res)
+
+	testSlice = [][]int{
+		{1, 1, 1, 1},
+		{1, 2, 2, 1},
+		{1, 2, 2, 1},
+		{1, 1, 1, 1},
+	}
+	res = PrintMatrix(testSlice)
+	assert.Equal(t, []int{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2}, res)
+
+	//剩余一行
+	testSlice = [][]int{
+		{1, 1, 1, 1},
+		{1, 2, 2, 1},
+		{1, 1, 1, 1},
+	}
+	res = PrintMatrix(testSlice)
+	assert.Equal(t, []int{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2}, res)
+
+	//剩余一列
+	testSlice = [][]int{
+		{1, 2, 3},
+		{10, 11, 4},
+		{9, 12, 5},
+		{8, 7, 6},
+	}
+	res = PrintMatrix(testSlice)
+	assert.Equal(t, []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}, res)
 }
 
 func TestMirror(t *testing.T) {

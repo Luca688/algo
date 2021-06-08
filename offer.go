@@ -8,7 +8,6 @@ import (
 
 //todo 包含min函数的栈
 
-//todo
 //顺时针打印矩阵 输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字
 func PrintMatrix(matrix [][]int) []int {
 
@@ -25,12 +24,10 @@ func PrintMatrix(matrix [][]int) []int {
 	for len(matrix) > 0 {
 		res = append(res, matrix[x][y])
 
-		//紧剩下最后一个元素n*n n%2!=0
+		//紧剩下最后一个元素 奇数+奇数
 		if left == right && top == bottom {
 			break
 		}
-		//剩下一列
-		//剩下一行
 
 		//上
 		if x == top && y < right {
@@ -38,10 +35,20 @@ func PrintMatrix(matrix [][]int) []int {
 			continue
 		}
 
+		//剩余一行 偶+奇
+		if top == bottom {
+			break
+		}
+
 		//右
 		if y == right && x < bottom {
 			x++
 			continue
+		}
+
+		//剩余一列 奇+偶
+		if right == left {
+			break
 		}
 
 		//下
@@ -55,6 +62,12 @@ func PrintMatrix(matrix [][]int) []int {
 			x--
 			//到达最后一个元素
 			if x == top {
+
+				//当前是最后一圈 偶数+偶数
+				if left+1 == right && top+1 == bottom {
+					break
+				}
+
 				left++
 				right--
 				top++
@@ -67,9 +80,8 @@ func PrintMatrix(matrix [][]int) []int {
 			continue
 		}
 
-		break
 	}
-
+	// fmt.Println(res)
 	return res
 }
 
