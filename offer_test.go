@@ -6,6 +6,22 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+func TestPrintMatrix(t *testing.T) {
+
+	testSlice := [][]int{
+		{1, 1, 1, 1, 1, 1, 1},
+		{13, 21, 21, 21, 21, 21, 11},
+		{13, 2, 3, 3, 3, 22, 11},
+		{13, 2, 3, 4, 3, 22, 11},
+		{13, 2, 3, 3, 3, 22, 11},
+		{13, 2, 2, 2, 2, 22, 11},
+		{12, 12, 12, 12, 12, 12, 11},
+	}
+	res := PrintMatrix(testSlice)
+	t.Log(res)
+
+}
+
 func TestMirror(t *testing.T) {
 
 	testSlice := []int{8, 6, 10, 5, 7, 9, 11}

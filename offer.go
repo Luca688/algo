@@ -6,6 +6,73 @@ import (
 	"strings"
 )
 
+//todo 包含min函数的栈
+
+//todo
+//顺时针打印矩阵 输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字
+func PrintMatrix(matrix [][]int) []int {
+
+	var res []int
+
+	top := 0
+	left := 0
+	right := len(matrix[0]) - 1
+	bottom := len(matrix) - 1
+
+	x := top
+	y := left
+
+	for len(matrix) > 0 {
+		res = append(res, matrix[x][y])
+
+		//紧剩下最后一个元素n*n n%2!=0
+		if left == right && top == bottom {
+			break
+		}
+		//剩下一列
+		//剩下一行
+
+		//上
+		if x == top && y < right {
+			y++
+			continue
+		}
+
+		//右
+		if y == right && x < bottom {
+			x++
+			continue
+		}
+
+		//下
+		if x == bottom && y <= right && y > left {
+			y--
+			continue
+
+		}
+		//左
+		if y == left && x <= bottom && x > top {
+			x--
+			//到达最后一个元素
+			if x == top {
+				left++
+				right--
+				top++
+				bottom--
+				x = top
+				y = left
+				continue
+
+			}
+			continue
+		}
+
+		break
+	}
+
+	return res
+}
+
 //二叉树的镜像
 //操作给定的二叉树，将其变换为源二叉树的镜像。
 //{8,6,10,5,7,9,11} {8,10,6,11,9,7,5}
