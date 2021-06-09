@@ -296,6 +296,7 @@ func (root *BinaryTreeNode) LevelOrder() []int {
 
 //根左右
 func (root *BinaryTreeNode) PrevOrderByIteration() []int {
+
 	var res []int
 	var currentNodeList []*BinaryTreeNode
 	currentNode := root
@@ -677,4 +678,32 @@ func (root *BinaryTreeNode) PrevOrder() (resList []int, resNodeList []*BinaryTre
 	}
 
 	return list, nodeList
+}
+
+//左右根-后序遍历
+func (root *BinaryTreeNode) NextOrderByRecursive() (resList []int, resNodeList []*BinaryTreeNode) {
+	var list []int
+	var nodeList []*BinaryTreeNode
+
+	NextOrderByRecursiveSub(root, &list, &nodeList)
+	return list, nodeList
+}
+
+func NextOrderByRecursiveSub(node *BinaryTreeNode, list *[]int, nodeList *[]*BinaryTreeNode) {
+
+	if node == nil {
+		return
+	}
+	if node.LeftChild != nil {
+		NextOrderByRecursiveSub(node.LeftChild, list, nodeList)
+	}
+
+	if node.RightChild != nil {
+		NextOrderByRecursiveSub(node.RightChild, list, nodeList)
+	}
+
+	*list = append(*list, node.Val)
+	*nodeList = append(*nodeList, node)
+
+	return
 }

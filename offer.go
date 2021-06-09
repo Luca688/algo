@@ -7,6 +7,74 @@ import (
 )
 
 /**
+二叉搜索树的后序遍历序列 todo
+输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历的结果。如果是则返回true,否则返回false。假设输入的数组的任意两个数字都互不相同。（ps：我们约定空树不是二叉搜素树）
+[4,8,6,12,16,14,10] true
+**/
+func VerifySquenceOfBST(sequence []int) bool {
+
+	length := len(sequence)
+	if length == 1 {
+
+		return true
+	}
+
+	if length == 2 {
+
+		if sequence[1] < sequence[0] {
+
+			return true
+		} else {
+			return false
+		}
+	}
+
+	outLast := sequence[:length-1]
+	last := sequence[length-1]
+
+	var left, right []int
+	for key, val := range outLast {
+
+		if val < last {
+
+			left = append(left, val)
+		} else {
+			right = outLast[key:]
+			break
+		}
+	}
+	leftRes := true
+	rightRes := true
+	if len(left) > 0 {
+
+		for _, val := range left {
+
+			if val > last {
+
+				return false
+			}
+		}
+
+		leftRes = VerifySquenceOfBST(left)
+	}
+	if len(right) > 0 {
+
+		for _, val := range right {
+
+			if val < last {
+				return false
+			}
+
+		}
+
+		rightRes = VerifySquenceOfBST(right)
+	}
+
+	return leftRes && rightRes
+
+}
+
+/**
 从上往下打印二叉树
 层序遍历
 **/

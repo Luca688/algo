@@ -6,6 +6,21 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+func TestVerifySquenceOfBST(t *testing.T) {
+
+	testSlice := []int{4, 8, 6, 12, 16, 14, 10}
+	assert.Equal(t, true, VerifySquenceOfBST(testSlice))
+
+	testSlice = []int{4, 8, 6, 12, 16, 14, 15}
+	assert.Equal(t, false, VerifySquenceOfBST(testSlice))
+
+	testSlice = []int{4, 8, 6, 2, 16, 14, 10}
+	assert.Equal(t, false, VerifySquenceOfBST(testSlice))
+
+	testSlice = []int{4, 8, 6, 12, 16, 9, 10}
+	assert.Equal(t, false, VerifySquenceOfBST(testSlice))
+}
+
 func TestIsPopOrder(t *testing.T) {
 
 	pushV := []int{1, 2, 3, 4, 5}

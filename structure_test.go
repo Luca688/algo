@@ -503,3 +503,11 @@ func TestPrevOrder(t *testing.T) {
 	resSlice := []int{5, 3, 1, 0, 2, 4, 7, 6, 8, 9}
 	assert.Equal(t, resSlice, res)
 }
+
+func TestNextOrderByRecursive(t *testing.T) {
+	testSlice := []int{10, 6, 14, 4, 8, 12, 16}
+	root := NewBSTree(testSlice)
+	expectedRes := []int{4, 8, 6, 12, 16, 14, 10}
+	res, _ := root.NextOrderByRecursive()
+	assert.Equal(t, expectedRes, res)
+}
