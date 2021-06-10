@@ -6,6 +6,18 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+func TestFindPath(t *testing.T) {
+
+	root := NewBinaryTreeNode(10)
+	root.RightChild = NewBinaryTreeNode(12)
+	root.LeftChild = NewBinaryTreeNode(5)
+	root.LeftChild.LeftChild = NewBinaryTreeNode(4)
+	root.LeftChild.RightChild = NewBinaryTreeNode(7)
+	res := FindPath(root, 22)
+	t.Log(res)
+
+}
+
 func TestVerifySquenceOfBST(t *testing.T) {
 
 	testSlice := []int{4, 8, 6, 12, 16, 14, 10}

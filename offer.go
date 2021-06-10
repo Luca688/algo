@@ -7,6 +7,44 @@ import (
 )
 
 /**
+二叉树中和为某一值的路径
+输入一颗二叉树的根节点和一个整数，按字典序打印出二叉树中结点值的和为输入整数的所有路径。路径定义为从树的根结点开始往下一直到叶结点所经过的结点形成一条路径。
+{10,5,12,4,7},22
+[[10,5,7],[10,12]]
+**/
+func FindPath(root *BinaryTreeNode, expectNumber int) [][]int {
+	var res [][]int
+
+	FindPathSub(root, expectNumber, []int{}, &res)
+	return res
+
+}
+
+func FindPathSub(root *BinaryTreeNode, expectNumber int, res []int, r *[][]int) {
+	diff := expectNumber - root.Val
+	res = append(res, root.Val)
+	//找到和相等的节点
+	if diff == 0 {
+		*r = append(*r, res)
+		return
+	}
+
+	if diff > 0 {
+		//到叶子节点也没有路径和相等的元素
+		if root.LeftChild == nil && root.RightChild == nil {
+			return
+		}
+		if root.LeftChild != nil {
+			FindPathSub(root.LeftChild, diff, res, r)
+
+		}
+		if root.RightChild != nil {
+			FindPathSub(root.RightChild, diff, res, r)
+		}
+	}
+}
+
+/**
 二叉搜索树的后序遍历序列 todo
 输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历的结果。如果是则返回true,否则返回false。假设输入的数组的任意两个数字都互不相同。（ps：我们约定空树不是二叉搜素树）
 [4,8,6,12,16,14,10] true
