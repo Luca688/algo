@@ -7,6 +7,48 @@ import (
 )
 
 /**
+todo
+二叉搜索树与双向链表
+输入一棵二叉搜索树，将该二叉搜索树转换成一个排序的双向链表
+注意:
+1.要求不能创建任何新的结点，只能调整树中结点指针的指向。当转化完成以后，树中节点的左指针需要指向前驱，树中节点的右指针需要指向后继
+2.返回链表中的第一个节点的指针
+3.函数返回的TreeNode，有左右指针，其实可以看成一个双向链表的数据结构
+*/
+// func Convert(pRootOfTree *BinaryTreeNode) *BinaryTreeNode {
+// }
+
+// func ConvertSub(root *BinaryTreeNode, node *BinaryTreeNode, p *BinaryTreeNode, newRoot *BinaryTreeNode) {
+
+// 	if node == nil {
+// 		return
+// 	}
+
+// 	//左节点不为空
+// 	if node.LeftChild != nil {
+
+// 		ConvertSub(root, node.LeftChild, node, newRoot)
+// 		return
+// 	}
+
+// 	//当前节点
+// 	if newRoot == nil {
+// 		newRoot = node
+// 	}
+
+// 	//右节点不为空
+// 	if node.RightChild != nil {
+// 		ConvertSub(root, node.RightChild, node, newRoot)
+// 		return
+// 	}
+
+// }
+
+/**
+复杂链表的复制 todo
+**/
+
+/**
 二叉树中和为某一值的路径
 输入一颗二叉树的根节点和一个整数，按字典序打印出二叉树中结点值的和为输入整数的所有路径。路径定义为从树的根结点开始往下一直到叶结点所经过的结点形成一条路径。
 {10,5,12,4,7},22
