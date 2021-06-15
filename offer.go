@@ -7,6 +7,21 @@ import (
 )
 
 /**
+输入一个字符串,按字典序打印出该字符串中字符的所有排列。例如输入字符串abc,则按字典序打印出由字符a,b,c所能排列出来的所有字符串abc,acb,bac,bca,cab和cba。
+输入一个字符串,长度不超过9(可能有字符重复),字符只包括大小写字母。
+**/
+func Permutation(str string) []string {
+	var res []string
+	length := len(str)
+	if length == 0 {
+
+		return res
+	}
+
+	return res
+}
+
+/**
 todo
 二叉搜索树与双向链表
 输入一棵二叉搜索树，将该二叉搜索树转换成一个排序的双向链表
